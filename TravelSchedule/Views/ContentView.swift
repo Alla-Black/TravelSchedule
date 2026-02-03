@@ -22,64 +22,56 @@ struct ContentView: View {
 }
 
 // MARK: - Test API call
+let apikey = "YOUR API KEY"
 
-func testFetchNearestStations() {
-    // Создаём Task для выполнения асинхронного кода
+func makeClient() throws -> Client {
+    Client(
+        serverURL: try Servers.Server1.url(),
+        transport: URLSessionTransport()
+    )
+}
+
+func runTest<T>(
+    title: String,
+    action: @escaping () async throws -> T
+) {
     Task {
+        print("Fetching \(title)...")
         do {
-            // 1. Создаём экземпляр сгенерированного клиента
-            let client = Client(
-                // Используем URL сервера, также сгенерированный из openapi.yaml (если он там определён)
-                serverURL: try Servers.Server1.url(),
-                // Указываем, какой транспорт использовать для отправки запросов
-                transport: URLSessionTransport()
-            )
-            
-            // 2. Создаём экземпляр нашего сервиса, передавая ему клиент и API-ключ
-            let service = NearestStationsService(
-                client: client,
-                apikey: "YOUR API"
- // !!! ЗАМЕНИТЕ НА СВОЙ РЕАЛЬНЫЙ КЛЮЧ !!!
-            )
-            
-            // 3. Вызываем метод сервиса
-            print("Fetching stations...")
-            let stations = try await service.getNearestStations(
-                lat: 59.864177, // Пример координат
-                lng: 30.319163, // Пример координат
-                distance: 50    // Пример дистанции
-            )
-            
-            // 4. Если всё успешно, печатаем результат в консоль
-            print("Successfully fetched stations: \(stations)")
+            let result = try await action()
+            print("Successfully fetched \(title): \(result)")
         } catch {
-            // 5. Если произошла ошибка на любом из этапов (создание клиента, вызов сервиса, обработка ответа),
-            //    она будет поймана здесь, и мы выведем её в консоль
-            print("Error fetching stations: \(error)")
-            // В реальном приложении здесь должна быть логика обработки ошибок (показ алерта и т. д.)
+            print("Error fetching \(title): \(error)")
         }
     }
 }
 
+func testFetchNearestStations() {
+    runTest(title: "nearest stations") {
+        let client = try makeClient()
+        let service = NearestStationsService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getNearestStations(
+            lat: 59.864177, // Пример координат
+            lng: 30.319163, // Пример координат
+            distance: 50    // Пример дистанции
+        )
+        
+        return result
+    }
+}
+
 func testFetchCopyright() {
-    Task {
-        do {
-            let client = Client(
-                serverURL: try Servers.Server1.url(),
-                transport: URLSessionTransport()
-            )
-            
-            let service = CopyrightService(
-                client: client,
-                apikey: "YOUR API"
-            )
-            
-            print("Fetching stations...")
-            let copyright = try await service.getCopyright()
-            
-            print("Successfully fetched copyright: \(copyright)")
-        } catch {
-            print("Error fetching stations: \(error)")
-        }
+    runTest(title: "copyright") {
+        let client = try makeClient()
+        let service = CopyrightService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getCopyright()
+        
+        return result
     }
 }
