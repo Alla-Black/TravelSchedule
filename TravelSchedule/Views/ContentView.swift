@@ -11,7 +11,8 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            testFetchStations()
+            testFetchNearestStations()
+            testFetchCopyright()
         }
     }
 }
@@ -22,8 +23,7 @@ struct ContentView: View {
 
 // MARK: - Test API call
 
-// Функция для тестового вызова API
-func testFetchStations() {
+func testFetchNearestStations() {
     // Создаём Task для выполнения асинхронного кода
     Task {
         do {
@@ -38,7 +38,7 @@ func testFetchStations() {
             // 2. Создаём экземпляр нашего сервиса, передавая ему клиент и API-ключ
             let service = NearestStationsService(
                 client: client,
-                apikey: "Ваш_АПИ"
+                apikey: "YOUR API"
  // !!! ЗАМЕНИТЕ НА СВОЙ РЕАЛЬНЫЙ КЛЮЧ !!!
             )
             
@@ -61,3 +61,25 @@ func testFetchStations() {
     }
 }
 
+func testFetchCopyright() {
+    Task {
+        do {
+            let client = Client(
+                serverURL: try Servers.Server1.url(),
+                transport: URLSessionTransport()
+            )
+            
+            let service = CopyrightService(
+                client: client,
+                apikey: "YOUR API"
+            )
+            
+            print("Fetching stations...")
+            let copyright = try await service.getCopyright()
+            
+            print("Successfully fetched copyright: \(copyright)")
+        } catch {
+            print("Error fetching stations: \(error)")
+        }
+    }
+}
