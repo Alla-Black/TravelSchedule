@@ -16,6 +16,7 @@
 		4D148A3D2F3133D300F8920D /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 4D148A362F3129DD00F8920D /* openapi-generator-config.yaml */; };
 		4D148A4A2F313F2C00F8920D /* NearestStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A492F313F2C00F8920D /* NearestStationsService.swift */; };
 		4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A5A2F328ED100F8920D /* CopyrightService.swift */; };
+		4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4D148A362F3129DD00F8920D /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 		4D148A492F313F2C00F8920D /* NearestStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestStationsService.swift; sourceTree = "<group>"; };
 		4D148A5A2F328ED100F8920D /* CopyrightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightService.swift; sourceTree = "<group>"; };
+		4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBetweenStationsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				4D148A492F313F2C00F8920D /* NearestStationsService.swift */,
 				4D148A5A2F328ED100F8920D /* CopyrightService.swift */,
+				4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				4D148A4A2F313F2C00F8920D /* NearestStationsService.swift in Sources */,
 				4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
+				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
