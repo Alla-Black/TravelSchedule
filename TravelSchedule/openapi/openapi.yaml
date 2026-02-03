@@ -4,7 +4,7 @@ info:
   description: API Яндекс.Расписаний
   version: 3.0.0
 servers:
-- url: https://api.rasp.yandex-net.ru
+- url: https://api.rasp.yandex.net
 tags:
 - name: Список ближайших станций
   description: Список ближайших станций
@@ -491,11 +491,9 @@ components:
                     description: Периодичность рейсов, например, "автобус раз в 10-15 минут".
                   begin_time:
                     type: string
-                    format: date-time
                     description: Время начала движения по нитке.
                   end_time:
                     type: string
-                    format: date-time
                     description: Время окончания движения по нитке.
               duration:
                 type: integer
@@ -514,11 +512,9 @@ components:
           $ref: '#/components/schemas/Station'
         departure:
           type: string
-          format: date-time
           description: Время отправления
         arrival:
           type: string
-          format: date-time
           description: Время прибытия
         thread:
           $ref: '#/components/schemas/Thread'
@@ -627,12 +623,10 @@ components:
           description: Дни, когда рейс не выполняется
         arrival:
           type: string
-          format: date-time
-          description: Время прибытия в формате ISO 8601
+          description: Время прибытия как строка
         departure:
           type: string
-          format: date-time
-          description: Время отправления в формате ISO 8601
+          description: Время отправления как строка
         thread:
           $ref: '#/components/schemas/Thread'
         days:
@@ -662,7 +656,6 @@ components:
           type: string
         start_time:
           type: string
-          format: time
         days:
           type: string
         interval:
@@ -720,10 +713,8 @@ components:
       properties:
         arrival:
           type: string
-          format: date-time
         departure:
           type: string
-          format: date-time
         stop_time:
           type: integer
           description: Продолжительность остановки в секундах
@@ -767,11 +758,9 @@ components:
               description: Частота рейсов
             begin_time:
               type: string
-              format: date-time
               description: Время начала
             end_time:
               type: string
-              format: date-time
               description: Время окончания
     Directions:
       type: object
@@ -814,11 +803,9 @@ components:
           description: Периодичность рейсов
         begin_time:
           type: string
-          format: date-time
           description: Время начала рейсов
         end_time:
           type: string
-          format: date-time
           description: Время окончания рейсов
     ThreadStationsResponse:
       type: object
