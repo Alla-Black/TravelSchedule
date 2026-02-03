@@ -13,6 +13,7 @@ struct ContentView: View {
         .onAppear {
             testFetchNearestStations()
             testFetchCopyright()
+            testFetchScheduleBetweenStations()
         }
     }
 }
@@ -22,7 +23,7 @@ struct ContentView: View {
 }
 
 // MARK: - Test API call
-let apikey = "YOUR API KEY"
+private let apikey = "8034fa20-6377-41e5-b6fc-06c455f42918"
 
 func makeClient() throws -> Client {
     Client(
@@ -71,6 +72,22 @@ func testFetchCopyright() {
             apikey: apikey
         )
         let result = try await service.getCopyright()
+        
+        return result
+    }
+}
+
+func testFetchScheduleBetweenStations() {
+    runTest(title: "schedule between stations") {
+        let client = try makeClient()
+        let service = ScheduleBetweenStationsService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getScheduleBetweenStations(
+            from: "s2006004",
+            to: "s9602494"
+            )
         
         return result
     }
