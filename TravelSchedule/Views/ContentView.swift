@@ -12,7 +12,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             
-            testFetchNearestCity()
+            testFetchCarrierInfo()
             
         }
     }
@@ -134,6 +134,22 @@ func testFetchNearestCity() {
             lat: 59.864177, // Пример координат,
             lng: 30.319163, // Пример координат
             distance: 50    // Пример дистанции
+        )
+        
+        return result
+    }
+}
+
+func testFetchCarrierInfo() {
+    runTest(title: "carrier info") {
+        let client = try makeClient()
+        let service = CarrierInfoService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getCarrierInfo(
+            code: "129",
+            system: "yandex"
         )
         
         return result
