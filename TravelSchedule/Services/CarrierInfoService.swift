@@ -3,7 +3,7 @@ import OpenAPIRuntime
 typealias CarrierResponse = Components.Schemas.CarrierResponse
 
 protocol CarrierInfoServiceProtocol {
-    func getCarrierInfo(code: Int) async throws -> CarrierResponse
+    func getCarrierInfo(code: String, system: String?) async throws -> CarrierResponse
 }
 
 final class CarrierInfoService: CarrierInfoServiceProtocol {
@@ -15,10 +15,11 @@ final class CarrierInfoService: CarrierInfoServiceProtocol {
         self.apikey = apikey
     }
     
-    func getCarrierInfo(code: Int) async throws -> CarrierResponse {
+    func getCarrierInfo(code: String, system: String?) async throws -> CarrierResponse {
         let response = try await client.getCarrierInfo(query: .init(
             apikey: apikey,
-            code: code
+            code: code,
+            system: system
         ))
         
         return try response.ok.body.json
