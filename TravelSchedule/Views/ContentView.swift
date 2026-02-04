@@ -11,9 +11,14 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            
+            testFetchNearestStations()
+            testFetchCopyright()
+            testFetchScheduleBetweenStations()
+            testFetchStationSchedule()
+            testFetchTreadStations()
+            testFetchNearestCity()
+            testFetchCarrierInfo()
             testFetchAllStations()
-            
         }
     }
 }
