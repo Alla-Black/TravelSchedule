@@ -367,7 +367,7 @@ paths:
           description: Код перевозчика
           required: true
           schema:
-            type: string
+            type: integer
         - name: system
           in: query
           description: Система кодирования (yandex, iata, sirena, express, esr)
