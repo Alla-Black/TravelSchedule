@@ -19,6 +19,7 @@
 		4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */; };
 		4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A7C2F336AB100F8920D /* StationScheduleService.swift */; };
 		4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A832F33849700F8920D /* ThreadStationsService.swift */; };
+		4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A8F2F33944F00F8920D /* NearestCityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBetweenStationsService.swift; sourceTree = "<group>"; };
 		4D148A7C2F336AB100F8920D /* StationScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationScheduleService.swift; sourceTree = "<group>"; };
 		4D148A832F33849700F8920D /* ThreadStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadStationsService.swift; sourceTree = "<group>"; };
+		4D148A8F2F33944F00F8920D /* NearestCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				4D148A6A2F329F6A00F8920D /* ScheduleBetweenStationsService.swift */,
 				4D148A7C2F336AB100F8920D /* StationScheduleService.swift */,
 				4D148A832F33849700F8920D /* ThreadStationsService.swift */,
+				4D148A8F2F33944F00F8920D /* NearestCityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
+				4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
