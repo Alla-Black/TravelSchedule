@@ -12,7 +12,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             
-            testFetchTreadStations()
+            testFetchNearestCity()
             
         }
     }
@@ -117,6 +117,23 @@ func testFetchTreadStations() {
         )
         let result = try await service.getRouteStations(
             uid: "022A_12_2"
+        )
+        
+        return result
+    }
+}
+
+func testFetchNearestCity() {
+    runTest(title: "nearest city") {
+        let client = try makeClient()
+        let service = NearestCityService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getNearestCity(
+            lat: 59.864177, // Пример координат,
+            lng: 30.319163, // Пример координат
+            distance: 50    // Пример дистанции
         )
         
         return result
