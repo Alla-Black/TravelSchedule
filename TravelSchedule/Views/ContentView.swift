@@ -92,7 +92,7 @@ func testFetchScheduleBetweenStations() {
         let result = try await service.getScheduleBetweenStations(
             from: "s2006004",
             to: "s9602494"
-            )
+        )
         
         return result
     }
@@ -181,13 +181,13 @@ func printAllStationsSample(_ response: TravelSchedule.Components.Schemas.AllSta
         print("AllStationsResponse: no countries")
         return
     }
-
+    
     let firstRegion = firstCountry.regions?.first
     let firstSettlement = firstRegion?.settlements?.first
     let firstStation = firstSettlement?.stations?.first
-
+    
     var trimmedCountry = firstCountry
-
+    
     if var region = firstRegion {
         if var settlement = firstSettlement {
             settlement.stations = firstStation.map { [$0] } ?? []
@@ -199,10 +199,10 @@ func printAllStationsSample(_ response: TravelSchedule.Components.Schemas.AllSta
     } else {
         trimmedCountry.regions = []
     }
-
+    
     let trimmedResponse = TravelSchedule.Components.Schemas.AllStationsResponse(
         countries: [trimmedCountry]
     )
-
+    
     print(trimmedResponse)
 }
