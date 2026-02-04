@@ -92,3 +92,18 @@ func testFetchScheduleBetweenStations() {
         return result
     }
 }
+
+func testFetchStationSchedule() {
+    runTest(title: "station schedule") {
+        let client = try makeClient()
+        let service = StationScheduleService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getStationSchedule(
+            station: "s2006004"
+        )
+        
+        return result
+    }
+}
