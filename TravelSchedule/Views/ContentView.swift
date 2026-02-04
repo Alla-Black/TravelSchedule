@@ -11,9 +11,9 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            testFetchNearestStations()
-            testFetchCopyright()
-            testFetchScheduleBetweenStations()
+            
+            testFetchTreadStations()
+            
         }
     }
 }
@@ -102,6 +102,21 @@ func testFetchStationSchedule() {
         )
         let result = try await service.getStationSchedule(
             station: "s2006004"
+        )
+        
+        return result
+    }
+}
+
+func testFetchTreadStations() {
+    runTest(title: "thread stations") {
+        let client = try makeClient()
+        let service = ThreadStationsService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getRouteStations(
+            uid: "022A_12_2"
         )
         
         return result
