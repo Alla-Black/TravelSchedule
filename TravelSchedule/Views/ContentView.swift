@@ -12,7 +12,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             
-            testFetchCarrierInfo()
+            testFetchAllStations()
             
         }
     }
@@ -154,4 +154,50 @@ func testFetchCarrierInfo() {
         
         return result
     }
+}
+
+func testFetchAllStations() {
+    runTest(title: "all stations") {
+        let client = try makeClient()
+        let service = AllStationsService(
+            client: client,
+            apikey: apikey
+        )
+        let result = try await service.getAllStations()
+        
+        printAllStationsSample(result)
+        
+        return "Printed sample: 1 country / 1 region / 1 settlement / 1 station"
+    }
+}
+
+func printAllStationsSample(_ response: TravelSchedule.Components.Schemas.AllStationsResponse) {
+    guard let firstCountry = response.countries?.first else {
+        print("AllStationsResponse: no countries")
+        return
+    }
+
+    let firstRegion = firstCountry.regions?.first
+    let firstSettlement = firstRegion?.settlements?.first
+    let firstStation = firstSettlement?.stations?.first
+
+    var trimmedCountry = firstCountry
+
+    if var region = firstRegion {
+        if var settlement = firstSettlement {
+            settlement.stations = firstStation.map { [$0] } ?? []
+            region.settlements = [settlement]
+        } else {
+            region.settlements = []
+        }
+        trimmedCountry.regions = [region]
+    } else {
+        trimmedCountry.regions = []
+    }
+
+    let trimmedResponse = TravelSchedule.Components.Schemas.AllStationsResponse(
+        countries: [trimmedCountry]
+    )
+
+    print(trimmedResponse)
 }
