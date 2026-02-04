@@ -422,7 +422,7 @@ paths:
         "200":
           description: Успешный ответ
           content:
-            text/html; charset=utf-8:
+            text/html:
               schema:
                 $ref: '#/components/schemas/AllStationsResponse'
   /v3.0/copyright/:
