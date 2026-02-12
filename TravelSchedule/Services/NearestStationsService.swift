@@ -20,7 +20,7 @@ final class NearestStationsService: NearestStationsServiceProtocol {
     // Хранит API-ключ (лучше передавать его извне, чем хранить прямо в сервисе)
     private let apikey: String
     
-    init(client: Client, apikey: String) {
+    init(client: Client, apikey: String = AppConfiguration.apiKey) {
         self.client = client
         self.apikey = apikey
     }

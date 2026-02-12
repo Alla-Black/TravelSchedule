@@ -13,7 +13,7 @@ final class ScheduleBetweenStationsService: ScheduleBetweenStationsServiceProtoc
     private let client: Client
     private let apikey: String
     
-    init(client: Client, apikey: String) {
+    init(client: Client, apikey: String = AppConfiguration.apiKey) {
         self.client = client
         self.apikey = apikey
     }

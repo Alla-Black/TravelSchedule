@@ -28,7 +28,7 @@ struct ContentView: View {
 }
 
 // MARK: - Test API call
-private let apikey = "8034fa20-6377-41e5-b6fc-06c455f42918"
+private let apikey: String = AppConfiguration.apiKey
 
 func makeClient() throws -> Client {
     Client(
