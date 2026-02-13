@@ -10,7 +10,6 @@ struct RouteFieldsView: View {
                 "",
                 text: $from,
                 prompt: Text("Откуда")
-                    .font(.system(size: 17, weight: .regular))
                     .foregroundStyle(Color.grayUniversal)
             )
             .font(.system(size: 17, weight: .regular))
@@ -24,7 +23,6 @@ struct RouteFieldsView: View {
                 "",
                 text: $to,
                 prompt: Text("Куда")
-                    .font(.system(size: 17, weight: .regular))
                     .foregroundStyle(Color.grayUniversal)
             )
             .font(.system(size: 17, weight: .regular))
