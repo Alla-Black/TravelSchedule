@@ -40,6 +40,8 @@
 		4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */; };
 		4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */; };
 		4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB002F43965B0020B81E /* ErrorView.swift */; };
+		4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB132F43A5850020B81E /* StationsRepository.swift */; };
+		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsReferenceParser.swift; sourceTree = "<group>"; };
 		4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorState.swift; sourceTree = "<group>"; };
 		4DD9BB002F43965B0020B81E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4DD9BB132F43A5850020B81E /* StationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRepository.swift; sourceTree = "<group>"; };
+		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultStationsRepository.swift .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,7 @@
 		4DD9BAD02F434DF30020B81E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4DD9BB0F2F43A55A0020B81E /* Repositories */,
 				4DD9BAE62F435DCE0020B81E /* Parsing */,
 			);
 			path = Data;
@@ -242,6 +247,15 @@
 				4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		4DD9BB0F2F43A55A0020B81E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB132F43A5850020B81E /* StationsRepository.swift */,
+				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +352,7 @@
 				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
 				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
+				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
 				4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
@@ -349,6 +364,7 @@
 				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
 				4DD9BAC22F433F050020B81E /* Direction.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
+				4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
 				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
 				4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */,
