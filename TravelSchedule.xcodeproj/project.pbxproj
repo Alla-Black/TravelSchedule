@@ -33,6 +33,10 @@
 		4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */; };
 		4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */; };
 		4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0922F3E751E006FD2EC /* SwapButton.swift */; };
+		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
+		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
+		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
+		4DD9BAC62F433F6C0020B81E /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC52F433F6C0020B81E /* Selection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputCardView.swift; sourceTree = "<group>"; };
 		4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFieldsView.swift; sourceTree = "<group>"; };
 		4D9FD0922F3E751E006FD2EC /* SwapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
+		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		4DD9BAC52F433F6C0020B81E /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 		4D148A1D2F30EC2E00F8920D /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D9FCFB92F3E0F09006FD2EC /* App */,
 				4D148A502F313F8A00F8920D /* Views */,
 				4D9FD0622F3E63F7006FD2EC /* Navigation */,
@@ -191,6 +200,17 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
+		4DD9BAB92F433ECD0020B81E /* Domain Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BAB82F433ECD0020B81E /* City.swift */,
+				4DD9BABD2F433EE10020B81E /* Station.swift */,
+				4DD9BAC12F433F050020B81E /* Direction.swift */,
+				4DD9BAC52F433F6C0020B81E /* Selection.swift */,
+			);
+			path = "Domain Models";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,18 +301,22 @@
 				4D148A4A2F313F2C00F8920D /* NearestStationsService.swift in Sources */,
 				4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */,
 				4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */,
+				4DD9BABA2F433ECD0020B81E /* City.swift in Sources */,
 				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
 				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
+				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
 				4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */,
 				4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */,
+				4DD9BAC22F433F050020B81E /* Direction.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
 				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
+				4DD9BAC62F433F6C0020B81E /* Selection.swift in Sources */,
 				4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
