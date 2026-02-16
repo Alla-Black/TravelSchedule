@@ -204,6 +204,7 @@
 				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
 				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
 				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,
+				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -239,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */,
-				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
