@@ -169,8 +169,11 @@ func testFetchAllStations() {
             apikey: apikey
         )
         let result = try await service.getAllStations()
+        let parser = StationsReferenceParser()
+        let parsed = parser.parse(allStationResponse: result)
         
         printAllStationsSample(result)
+        print("Cities: \(parsed.citiesById.count)")
         
         return "Printed sample: 1 country / 1 region / 1 settlement / 1 station"
     }
