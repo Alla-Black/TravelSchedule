@@ -42,6 +42,7 @@
 		4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB002F43965B0020B81E /* ErrorView.swift */; };
 		4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB132F43A5850020B81E /* StationsRepository.swift */; };
 		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */; };
+		4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		4DD9BB002F43965B0020B81E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4DD9BB132F43A5850020B81E /* StationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRepository.swift; sourceTree = "<group>"; };
 		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultStationsRepository.swift .swift"; sourceTree = "<group>"; };
+		4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,7 @@
 				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D9FCFB92F3E0F09006FD2EC /* App */,
 				4D148A502F313F8A00F8920D /* Views */,
-				4D9FD0622F3E63F7006FD2EC /* Navigation */,
+				4DD9BB422F449C770020B81E /* ViewModels */,
 				4DD9BAD02F434DF30020B81E /* Data */,
 				4D148A452F313F1300F8920D /* Services */,
 				4D148A352F31299E00F8920D /* openapi */,
@@ -159,6 +161,7 @@
 				4D9FD07F2F3E65BB006FD2EC /* UIViews */,
 				4DD9BAF82F4395B90020B81E /* States */,
 				4D148A1B2F30EC2E00F8920D /* ContentView.swift */,
+				4D9FD0622F3E63F7006FD2EC /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +259,14 @@
 				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4DD9BB422F449C770020B81E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
 				4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
+				4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */,
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
 				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
