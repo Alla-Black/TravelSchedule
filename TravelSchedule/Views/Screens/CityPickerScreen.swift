@@ -14,7 +14,6 @@ struct CityPickerScreen: View {
                 VStack(spacing: 16) {
                     SearchBarView(text: $viewModel.query)
                         .padding(.horizontal, 16)
-                        .padding(.top, 13)
                         .onChange(of: viewModel.query) {
                             viewModel.applyFilter()
                         }
