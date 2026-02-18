@@ -15,7 +15,6 @@ struct ErrorView: View {
                     .foregroundStyle(.blackDayNight)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
-                    
             }
         }
     }
