@@ -44,6 +44,7 @@
 		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */; };
 		4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */; };
 		4DD9BB4F2F44FC450020B81E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */; };
+		4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB902F45E9810020B81E /* PickerRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultStationsRepository.swift .swift"; sourceTree = "<group>"; };
 		4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerViewModel.swift; sourceTree = "<group>"; };
 		4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		4DD9BB902F45E9810020B81E /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,
 				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
 				4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */,
+				4DD9BB902F45E9810020B81E /* PickerRowView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */,
 				4DD9BABA2F433ECD0020B81E /* City.swift in Sources */,
 				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
+				4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */,
 				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
 				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
