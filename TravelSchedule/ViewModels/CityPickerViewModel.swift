@@ -40,6 +40,13 @@ final class CityPickerViewModel: ObservableObject {
     
     @MainActor
     func load() async {
+        if isLoading { return }
+        if !cities.isEmpty {
+            updatePopularCitiesFromLoadedReference()
+            applyFilter()
+            return
+        }
+        
         isLoading = true
         errorState = nil
         

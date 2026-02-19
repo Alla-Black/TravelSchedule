@@ -18,6 +18,12 @@ final class StationPickerViewModel: ObservableObject {
     
     @MainActor
     func load() async {
+        if isLoading { return }
+        if !stations.isEmpty {
+            applyFilter()
+            return
+        }
+        
         isLoading = true
         errorState = nil
         
