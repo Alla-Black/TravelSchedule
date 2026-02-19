@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ErrorView: View {
- let state: AppErrorState
+    let state: AppErrorState
     var body: some View {
         ZStack {
             Color.whiteDayNight

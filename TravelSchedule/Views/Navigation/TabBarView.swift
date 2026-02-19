@@ -10,9 +10,15 @@ enum Tab: Hashable {
 // MARK: - TabBarView
 
 struct TabBarView: View {
+    // MARK: - Private Properties
+    
+    private let stationsRepository: StationsRepository = DefaultStationsRepository()
+    
     // MARK: - State
     
     @State private var selection: Tab = .main
+    @StateObject private var navigationModel = NavigationModel()
+    @StateObject private var routeModel = RouteSelectionModel()
     
     // MARK: - Initializers
     
@@ -24,11 +30,42 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            MainScreen()
-                .tabItem {
-                    Image(.mainItem)
-                }
-                .tag(Tab.main) // метка для связи вкладки со значением selection
+            NavigationStack(path: $navigationModel.path) {
+                MainScreen()
+                    .environmentObject(routeModel)
+                    .environmentObject(navigationModel)
+                    .navigationDestination(for: Screen.self) { screen in
+                        switch screen {
+                            
+                        case .city(let direction):
+                            CityPickerScreen(repository: stationsRepository) { city in
+                                navigationModel.push(.station(direction, city))
+                            }
+                            .environmentObject(routeModel)
+                            .environmentObject(navigationModel)
+                            
+                        case .station(let direction, let city):
+                            StationPickerScreen(
+                                repository: stationsRepository,
+                                city: city
+                            ) { selection in
+                                switch direction {
+                                case .from:
+                                    routeModel.from = selection
+                                case .to:
+                                    routeModel.to = selection
+                                }
+                                navigationModel.popToRoot()
+                            }
+                            .environmentObject(routeModel)
+                            .environmentObject(navigationModel)
+                        }
+                    }
+            }
+            .tabItem {
+                Image(.mainItem)
+            }
+            .tag(Tab.main) // метка для связи вкладки со значением selection
             
             SettingsScreen()
                 .tabItem {
@@ -51,6 +88,7 @@ struct TabBarView: View {
         UITabBar.appearance().scrollEdgeAppearance = appearance // применяем стиль к состоянию при скролле
     }
 }
+
 
 // MARK: - Preview
 

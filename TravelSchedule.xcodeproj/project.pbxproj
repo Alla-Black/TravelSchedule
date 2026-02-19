@@ -51,6 +51,7 @@
 		4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */; };
 		4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0E2F475A030020B81E /* Screen.swift */; };
 		4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC112F475BB20020B81E /* NavigationModel.swift */; };
+		4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerScreen.swift; sourceTree = "<group>"; };
 		4DD9BC0E2F475A030020B81E /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		4DD9BC112F475BB20020B81E /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */,
+				4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
 				4DD9BAC22F433F050020B81E /* Direction.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
+				4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */,
 				4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
 				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
