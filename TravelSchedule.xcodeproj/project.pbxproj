@@ -48,6 +48,7 @@
 		4DD9BBB52F4606110020B81E /* PickerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BBB42F4606110020B81E /* PickerListView.swift */; };
 		4DD9BBDC2F46501A0020B81E /* CityPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */; };
 		4DD9BC082F4717510020B81E /* StationPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */; };
+		4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		4DD9BBB42F4606110020B81E /* PickerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerListView.swift; sourceTree = "<group>"; };
 		4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerScreen.swift; sourceTree = "<group>"; };
 		4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerViewModel.swift; sourceTree = "<group>"; };
+		4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				4D9FD0562F3E6213006FD2EC /* MainScreen.swift */,
 				4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */,
 				4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */,
+				4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
 				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
+				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
 				4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */,
 				4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */,
 				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
