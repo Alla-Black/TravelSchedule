@@ -21,17 +21,12 @@ final class CityPickerViewModel: ObservableObject {
     @Published private(set) var filteredCities: [City] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorState: AppErrorState? = nil
-    @Published private(set) var recentCities: [City] = []
     @Published private(set) var popularCities: [City] = []
     @Published var query: String = ""
     
     var displayedCities: [City] {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines) // убираем пробелы и переносы строк, чтобы строка считалась пустой
-        if trimmedQuery.isEmpty {
-            return mergeUnique(primary: recentCities, secondary: popularCities)
-        } else {
-            return filteredCities
-        }
+        return trimmedQuery.isEmpty ? popularCities : filteredCities
     }
     
     init(repository: StationsRepository) {
@@ -85,35 +80,7 @@ final class CityPickerViewModel: ObservableObject {
         }
     }
     
-    func select(city: City) {
-        recentCities.removeAll { $0.id == city.id }
-        recentCities.insert(city, at: 0)
-        
-        if recentCities.count > 10 {
-            recentCities = Array(recentCities.prefix(10))
-        }
-    }
-    
     // MARK: - Helpers
-    
-    private func mergeUnique(primary: [City], secondary: [City]) -> [City] {
-        var seen = Set<String>()
-        var result: [City] = []
-        result.reserveCapacity(primary.count + secondary.count) // reserveCapacity - заранее выдели память под примерно столько элементов
-        
-        for city in primary {
-            if seen.insert(city.id).inserted { // берем город и пытаемся добавить id в множество. Если добавился, значит он уникальный (ищем дубли)
-                result.append(city) // добавляем только уникальные
-            }
-        }
-        
-        for city in secondary {
-            if seen.insert(city.id).inserted {
-                result.append(city)
-            }
-        }
-        return result
-    }
     
     private func updatePopularCitiesFromLoadedReference() {
         guard !cities.isEmpty else {

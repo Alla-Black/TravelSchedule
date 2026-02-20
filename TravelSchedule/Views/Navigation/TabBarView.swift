@@ -34,8 +34,6 @@ struct TabBarView: View {
                 MainScreen()
                     .navigationTitle("")
                     .navigationBarTitleDisplayMode(.inline)
-                    .environmentObject(routeModel)
-                    .environmentObject(navigationModel)
                     .navigationDestination(for: Screen.self) { screen in
                         switch screen {
                             
@@ -43,8 +41,6 @@ struct TabBarView: View {
                             CityPickerScreen(repository: stationsRepository) { city in
                                 navigationModel.push(.station(direction, city))
                             }
-                            .environmentObject(routeModel)
-                            .environmentObject(navigationModel)
                             
                         case .station(let direction, let city):
                             StationPickerScreen(
@@ -59,11 +55,11 @@ struct TabBarView: View {
                                 }
                                 navigationModel.popToRoot()
                             }
-                            .environmentObject(routeModel)
-                            .environmentObject(navigationModel)
                         }
                     }
             }
+            .environmentObject(routeModel)
+            .environmentObject(navigationModel)
             .tabItem {
                 Image(.mainItem)
             }

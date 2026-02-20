@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CityPickerScreen: View {
     @StateObject private var viewModel: CityPickerViewModel
+    
     let onSelectedCity: (City) -> Void
     
     init(repository: StationsRepository = DefaultStationsRepository(), onSelectedCity: @escaping (City) -> Void) {
@@ -46,7 +47,6 @@ struct CityPickerScreen: View {
                         items: viewModel.displayedCities,
                         rowTitle: { $0.title },
                         onSelect: {
-                            viewModel.select(city: $0)
                             onSelectedCity($0)
                         }
                     )
