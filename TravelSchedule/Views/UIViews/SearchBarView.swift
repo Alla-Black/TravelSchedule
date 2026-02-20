@@ -2,16 +2,21 @@ import SwiftUI
 
 struct SearchBarView: View {
     @Binding var text: String
+    @FocusState private var isFocused: Bool
     
-    private var isActive: Bool {
+    private var hasText: Bool {
         !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    private var shouldShowClearButton: Bool {
+        isFocused
     }
     
     var body: some View {
         HStack() {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 17, weight: .regular))
-                .foregroundStyle(isActive ? Color.blackDayNight : Color.grayUniversal)
+                .foregroundStyle(hasText ? Color.blackDayNight : Color.grayUniversal)
             
             TextField(
                 "",
@@ -22,9 +27,11 @@ struct SearchBarView: View {
             .font(.system(size: 17, weight: .regular))
             .foregroundStyle(Color.blackDayNight)
             .textFieldStyle(.plain)
+            .tint(Color.blueUniversal)
+            .focused($isFocused)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            if isActive {
+            if shouldShowClearButton {
                 Button {
                     text = ""
                 } label: {
@@ -34,6 +41,10 @@ struct SearchBarView: View {
                 }
                 .buttonStyle(.plain)
             }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            isFocused = true
         }
         .padding(.leading, 8)
         .padding(.trailing, 6)
