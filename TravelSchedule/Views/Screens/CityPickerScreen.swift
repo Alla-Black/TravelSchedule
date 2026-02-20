@@ -59,6 +59,7 @@ struct CityPickerScreen: View {
                         .foregroundStyle(.blackDayNight)
                 }
             }
+            .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.load()

@@ -32,6 +32,8 @@ struct TabBarView: View {
         TabView(selection: $selection) {
             NavigationStack(path: $navigationModel.path) {
                 MainScreen()
+                    .navigationTitle("")
+                    .navigationBarTitleDisplayMode(.inline)
                     .environmentObject(routeModel)
                     .environmentObject(navigationModel)
                     .navigationDestination(for: Screen.self) { screen in
