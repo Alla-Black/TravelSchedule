@@ -8,4 +8,9 @@ final class RouteSelectionModel: ObservableObject {
     var isRouteComplete: Bool {
         from != nil && to != nil
     }
+    
+    func swap() {
+        (from, to) = (to, from)
+    }
+    
 }

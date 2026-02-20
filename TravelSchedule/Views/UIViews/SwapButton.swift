@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct SwapButton: View {
+    let action: () -> Void
+    
     var body: some View {
-        Button(action: swapDirection) {
+        Button(action: action) {
             Image(systemName: "arrow.2.squarepath")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -17,12 +19,4 @@ struct SwapButton: View {
                 .contentShape(Circle())
         }
     }
-    
-    private func swapDirection() {
-        
-    }
-}
-
-#Preview {
-    SwapButton()
 }

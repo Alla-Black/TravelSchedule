@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct RouteInputCardView: View {
+    @EnvironmentObject private var routeModel: RouteSelectionModel
+    
     var body: some View {
         HStack(spacing: 16) {
             RouteFieldsView()
-            SwapButton()
+            SwapButton(action: { routeModel.swap() })
         }
         .padding(16)
         .background(
@@ -12,8 +14,4 @@ struct RouteInputCardView: View {
                 .fill(Color.blueUniversal)
         )
     }
-}
-
-#Preview {
-    RouteInputCardView()
 }
