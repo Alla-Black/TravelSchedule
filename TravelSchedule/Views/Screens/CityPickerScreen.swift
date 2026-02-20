@@ -60,6 +60,7 @@ struct CityPickerScreen: View {
                 }
             }
             .navigationTitle("")
+            .toolbar(.hidden, for: .tabBar) // спрятать таббар
             .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.load()
