@@ -91,7 +91,9 @@ func testFetchScheduleBetweenStations() {
         )
         let result = try await service.getScheduleBetweenStations(
             from: "s2006004",
-            to: "s9602494"
+            to: "s9602494",
+            date: "2026-02-20",
+            transfers: true
         )
         
         return result

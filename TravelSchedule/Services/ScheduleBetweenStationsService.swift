@@ -5,7 +5,9 @@ typealias Segments = Components.Schemas.Segments
 protocol ScheduleBetweenStationsServiceProtocol {
     func getScheduleBetweenStations(
         from: String,
-        to: String
+        to: String,
+        date: String?,
+        transfers: Bool?
     ) async throws -> Segments
 }
 
@@ -18,9 +20,20 @@ final class ScheduleBetweenStationsService: ScheduleBetweenStationsServiceProtoc
         self.apikey = apikey
     }
     
-    func getScheduleBetweenStations(from: String, to: String) async throws -> Segments {
+    func getScheduleBetweenStations(
+        from: String,
+        to: String,
+        date: String?,
+        transfers: Bool?
+    ) async throws -> Segments {
         let response = try await client.getScheduleBetweenStations(
-            query: .init(apikey: apikey, from: from, to: to)
+            query: .init(
+                apikey: apikey,
+                from: from,
+                to: to,
+                date: date,
+                transfers: transfers
+            )
         )
         return try response.ok.body.json
     }
