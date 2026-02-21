@@ -53,6 +53,7 @@
 		4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC112F475BB20020B81E /* NavigationModel.swift */; };
 		4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */; };
 		4DD9BC2B2F4A05B80020B81E /* ScheduleCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */; };
+		4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		4DD9BC112F475BB20020B81E /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionModel.swift; sourceTree = "<group>"; };
 		4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardItem.swift; sourceTree = "<group>"; };
+		4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponseParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */,
+				4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */,
 				4D9FD0742F3E658E006FD2EC /* SplashScreen.swift in Sources */,
 				4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */,
 				4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */,
