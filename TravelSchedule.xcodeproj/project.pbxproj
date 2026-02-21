@@ -52,6 +52,7 @@
 		4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0E2F475A030020B81E /* Screen.swift */; };
 		4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC112F475BB20020B81E /* NavigationModel.swift */; };
 		4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */; };
+		4DD9BC2B2F4A05B80020B81E /* ScheduleCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		4DD9BC0E2F475A030020B81E /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		4DD9BC112F475BB20020B81E /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionModel.swift; sourceTree = "<group>"; };
+		4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				4DD9BABD2F433EE10020B81E /* Station.swift */,
 				4DD9BAC12F433F050020B81E /* Direction.swift */,
 				4DD9BAC52F433F6C0020B81E /* Selection.swift */,
+				4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */,
 			);
 			path = "Domain Models";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */,
 				4D148A4A2F313F2C00F8920D /* NearestStationsService.swift in Sources */,
 				4DD9BBB52F4606110020B81E /* PickerListView.swift in Sources */,
+				4DD9BC2B2F4A05B80020B81E /* ScheduleCardItem.swift in Sources */,
 				4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */,
 				4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */,
 				4DD9BBDC2F46501A0020B81E /* CityPickerScreen.swift in Sources */,
