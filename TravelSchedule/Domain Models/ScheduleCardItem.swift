@@ -11,7 +11,11 @@ struct ScheduleCardItem: Identifiable, Hashable {
     let arrivalTimeTitle: String
     let durationTitle: String
     
-    let transfersTitle: String?
+    let hasTransfers: Bool
+    
+    var transfersSubtitle: String? {
+        hasTransfers ? "С пересадкой" : nil
+    }
     
     init(
         uid: String,
@@ -34,6 +38,6 @@ struct ScheduleCardItem: Identifiable, Hashable {
         self.arrivalTimeTitle = arrivalTimeTitle
         self.durationTitle = durationTitle
         
-        self.transfersTitle = hasTransfers ? "С пересадкой" : nil
+        self.hasTransfers = hasTransfers
     }
 }
