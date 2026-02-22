@@ -55,6 +55,12 @@ struct TabBarView: View {
                                 }
                                 navigationModel.popToRoot()
                             }
+                            
+                        case .schedule(let from, let to):
+                            ScheduleScreen(
+                                from: from,
+                                to: to
+                            )
                         }
                     }
             }

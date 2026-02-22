@@ -57,6 +57,7 @@
 		4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */; };
 		4DD9BC362F4B59DB0020B81E /* DefaultScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */; };
 		4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */; };
+		4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRepository.swift; sourceTree = "<group>"; };
 		4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultScheduleRepository.swift; sourceTree = "<group>"; };
 		4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */,
 				4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */,
 				4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */,
+				4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */,
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
 				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
+				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
 				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,

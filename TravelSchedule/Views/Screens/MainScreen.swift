@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainScreen: View {
     @EnvironmentObject private var routeModel: RouteSelectionModel
+    @EnvironmentObject private var navigationModel: NavigationModel
     
     var body: some View {
         ZStack {
@@ -24,7 +25,8 @@ struct MainScreen: View {
                     
                     if routeModel.isRouteComplete {
                         Button {
-                            
+                            guard let from = routeModel.from, let to = routeModel.to else { return }
+                            navigationModel.push(.schedule(from: from, to: to))
                         } label: {
                             Text("Найти")
                                 .font(.system(size: 17, weight: .bold))
