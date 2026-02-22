@@ -54,7 +54,7 @@ final class CityPickerViewModel: ObservableObject {
             updatePopularCitiesFromLoadedReference()
             applyFilter()
         } catch {
-            if let repoError = error as? StationsRepositoryError {
+            if let repoError = error as? RepositoryError {
                 switch repoError {
                 case .noInternet:
                     errorState = .noInternet

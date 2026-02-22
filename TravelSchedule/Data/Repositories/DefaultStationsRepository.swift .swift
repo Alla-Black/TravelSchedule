@@ -2,12 +2,6 @@ import Foundation
 import OpenAPIURLSession
 import os
 
-enum StationsRepositoryError: Error, Equatable {
-    case noInternet
-    case server
-    case dataNotFound
-}
-
 final class DefaultStationsRepository: StationsRepository {
     private let apikey: String = AppConfiguration.apiKey
     private let parser = StationsReferenceParser()
@@ -39,10 +33,10 @@ final class DefaultStationsRepository: StationsRepository {
         } catch {
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
                 logger.error("Failed to load all stations: \(String(describing: error))")
-                throw StationsRepositoryError.noInternet
+                throw RepositoryError.noInternet
             } else {
                 logger.error("Failed to load all stations: \(String(describing: error))")
-                throw StationsRepositoryError.server
+                throw RepositoryError.server
             }
         }
     }
@@ -56,7 +50,7 @@ final class DefaultStationsRepository: StationsRepository {
         try await loadIfNeeded()
         guard let stations = cachedStationsByCityId?[cityId] else {
             logger.error("Stations not found for cityId: \(cityId)")
-            throw StationsRepositoryError.dataNotFound
+            throw RepositoryError.dataNotFound
         }
         return stations.sorted(by: { $0.title < $1.title})
     }

@@ -35,7 +35,7 @@ final class StationPickerViewModel: ObservableObject {
             stations = try await repository.getStations(cityId: city.id)
             applyFilter()
         } catch {
-            if let repoError = error as? StationsRepositoryError {
+            if let repoError = error as? RepositoryError {
                 switch repoError {
                 case .noInternet:
                     errorState = .noInternet
