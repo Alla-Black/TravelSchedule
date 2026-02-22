@@ -42,7 +42,8 @@ final class StationPickerViewModel: ObservableObject {
                 case .server:
                     errorState = .server
                 case .dataNotFound:
-                    errorState = .server
+                    stations = []
+                    filteredStations = []
                 }
             } else {
                 errorState = .server

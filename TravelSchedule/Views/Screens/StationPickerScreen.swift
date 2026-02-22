@@ -35,8 +35,19 @@ struct StationPickerScreen: View {
                 } else if let error = viewModel.errorState {
                     ErrorView(state: error)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                // 3) Пусто без поиска: ничего не введено, но список пустой
+                else if viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
+                    VStack {
+                        Spacer()
+                        Text("Станций не найдено")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundStyle(Color.blackDayNight)
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // 3. Когда город не найден
+                    // 4. Пусто после поиска: ввели текст, но совпадений нет
                 } else if
                     !viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
                     VStack {
@@ -46,9 +57,9 @@ struct StationPickerScreen: View {
                             .foregroundStyle(Color.blackDayNight)
                         Spacer()
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // Список станций
+                    // 5. Список станций
                 } else {
                     PickerListView(
                         items: viewModel.filteredStations,
@@ -60,17 +71,17 @@ struct StationPickerScreen: View {
                     )
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Выбор станции")
-                        .font(.system(size: 17, weight: .bold))
-                        .foregroundStyle(.blackDayNight)
-                }
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Выбор станции")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundStyle(.blackDayNight)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .task {
-                await viewModel.load()
-            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.load()
         }
     }
 }
