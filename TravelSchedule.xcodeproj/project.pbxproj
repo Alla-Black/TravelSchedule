@@ -58,6 +58,7 @@
 		4DD9BC362F4B59DB0020B81E /* DefaultScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */; };
 		4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */; };
 		4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */; };
+		4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultScheduleRepository.swift; sourceTree = "<group>"; };
 		4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
 		4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreen.swift; sourceTree = "<group>"; };
+		4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			children = (
 				4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */,
 				4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */,
+				4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
 				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
 				4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */,
+				4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */,
 				4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */,
 				4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */,
 				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
