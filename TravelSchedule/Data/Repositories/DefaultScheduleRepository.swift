@@ -1,5 +1,6 @@
 import Foundation
 import OpenAPIURLSession
+import OpenAPIRuntime
 import os
 
 final class DefaultScheduleRepository: ScheduleRepository {
@@ -65,16 +66,28 @@ final class DefaultScheduleRepository: ScheduleRepository {
             )
             
             let parsed = parser.parse(dto: dto)
+            
+            if parsed.isEmpty {
+                throw RepositoryError.dataNotFound
+            }
+            
             cache[key] = parsed
             return parsed
             
         } catch {
             logger.error("Failed to load schedule between stations: \(String(describing: error))")
+            if let repoError = error as? RepositoryError {
+                    throw repoError
+                }
+            
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
                 throw RepositoryError.noInternet
-            } else {
-                throw RepositoryError.server
             }
+            let description = String(describing: error)
+            if description.contains("statusCode: 404") {
+                throw RepositoryError.dataNotFound
+            }
+            throw RepositoryError.server
         }
     }
 }

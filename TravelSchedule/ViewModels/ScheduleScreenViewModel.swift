@@ -47,6 +47,7 @@ final class ScheduleScreenViewModel: ObservableObject {
             )
         } catch {
             if let repoError = error as? RepositoryError {
+                
                 switch repoError {
                 case .noInternet:
                     errorState = .noInternet
