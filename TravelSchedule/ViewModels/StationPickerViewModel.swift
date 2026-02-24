@@ -11,6 +11,16 @@ final class StationPickerViewModel: ObservableObject {
     @Published private(set) var errorState: AppErrorState? = nil
     @Published var query: String = ""
     
+    private var stationsForDisplay: [Station] {
+        let allowed: Set<String> = ["station", "platform", "train_station"]
+        
+        return stations.filter { station in
+            let type = station.stationType.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                  
+            return !type.isEmpty && allowed.contains(type)
+        }
+    }
+    
     init(repository: StationsRepository, city: City) {
         self.repository = repository
         self.city = city
@@ -53,10 +63,12 @@ final class StationPickerViewModel: ObservableObject {
     
     func applyFilter() {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        let base = stationsForDisplay
+        
         if trimmedQuery.isEmpty {
-            filteredStations = stations
+            filteredStations = base
         } else {
-            filteredStations = stations.filter {
+            filteredStations = base.filter {
                 $0.title.localizedCaseInsensitiveContains(trimmedQuery)
             }
         }

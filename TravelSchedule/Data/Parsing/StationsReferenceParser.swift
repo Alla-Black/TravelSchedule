@@ -25,17 +25,20 @@ final class StationsReferenceParser {
                         return "fallback-\(countryTitle)"
                     }()
                     
-                    let parsedStations: [Station] = (settlement.stations ?? []).compactMap { dtoStation in
-                        guard let stationId = dtoStation.codes?.yandex_code, !stationId.isEmpty else { return nil }
-                        let stationTitle = (dtoStation.title ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-                        return Station(id: stationId, title: stationTitle)
-                    }
-                    
-                    guard !parsedStations.isEmpty else { continue }
-                    
                     if citiesById[cityId] == nil {
                         citiesById[cityId] = City(id: cityId, title: cityTitle)
                     }
+                    
+                    let parsedStations: [Station] = (settlement.stations ?? []).compactMap { dtoStation in
+                        
+                        guard let stationId = dtoStation.codes?.yandex_code, !stationId.isEmpty else { return nil }
+                        let stationTitle = (dtoStation.title ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                        guard !stationTitle.isEmpty else { return nil }
+                        let stationType = (dtoStation.station_type ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                        return Station(id: stationId, title: stationTitle, stationType: stationType)
+                    }
+                    
+                    guard !parsedStations.isEmpty else { continue }
                     
                     let existing = stationsByCityId[cityId] ?? []
                     stationsByCityId[cityId] = mergeStations(existing: existing, new: parsedStations)
