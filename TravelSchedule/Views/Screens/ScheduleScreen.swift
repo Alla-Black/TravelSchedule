@@ -69,6 +69,7 @@ struct ScheduleScreen: View {
                         }
                     }
                     .padding(.horizontal, 16)
+                    
                 }
             }
             
@@ -78,10 +79,12 @@ struct ScheduleScreen: View {
                     Button("Уточнить время") {
                         
                     }
-                    .frame(width: 343, height: 60)
+                    .font(.system(size:17, weight: .bold))
                     .foregroundColor(.whiteUniversal)
+                    .padding(.vertical, 20)
+                    .frame(maxWidth: .infinity)
                     .background(.blueUniversal)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .cornerRadius(16)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 24)
                 }
