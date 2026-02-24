@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ScheduleScreen: View {
     @StateObject private var viewModel: ScheduleScreenViewModel
+    @EnvironmentObject private var navigationModel: NavigationModel
     
     let from: Selection
     let to: Selection
@@ -51,7 +52,7 @@ struct ScheduleScreen: View {
                 } else if let error = viewModel.errorState {
                     ErrorView(state: error)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if viewModel.schedule.isEmpty {
+                } else if viewModel.displayedSchedule.isEmpty {
                     VStack {
                         Spacer()
                         Text("Вариантов нет")
@@ -63,7 +64,7 @@ struct ScheduleScreen: View {
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 8) {
-                            ForEach(viewModel.schedule) { item in
+                            ForEach(viewModel.displayedSchedule) { item in
                                 ScheduleCardView(item: item)
                             }
                         }
@@ -76,7 +77,7 @@ struct ScheduleScreen: View {
                 if shouldShowBottomButton {
                     Spacer()
                     Button("Уточнить время") {
-                        
+                        navigationModel.push(.scheduleFilters)
                     }
                     .font(.system(size:17, weight: .bold))
                     .foregroundColor(.whiteUniversal)

@@ -61,6 +61,9 @@ struct TabBarView: View {
                                 from: from,
                                 to: to
                             )
+                            
+                        case .scheduleFilters:
+                            ScheduleFiltersScreen()
                         }
                     }
             }
