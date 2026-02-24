@@ -28,6 +28,16 @@ enum DepartureTimeRange: CaseIterable, Hashable {
 
 enum TransfersOption: Equatable {
     case all
-    case onlyWith
     case onlyDirect
+}
+
+extension DepartureTimeRange {
+    func contains(hour: Int) -> Bool {
+        switch self {
+        case .morning: return hour >= 6 && hour < 12
+        case .day:     return hour >= 12 && hour < 18
+        case .evening: return hour >= 18 && hour < 24
+        case .night:   return hour >= 0 && hour < 6
+        }
+    }
 }

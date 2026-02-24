@@ -11,6 +11,8 @@ final class ScheduleScreenViewModel: ObservableObject {
     @Published private(set) var schedule: [ScheduleCardItem] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorState: AppErrorState? = nil
+    @Published private(set) var filters: ScheduleFilters = .default
+    @Published private(set) var displayedSchedule: [ScheduleCardItem] = []
     
     init(
         repository: ScheduleRepository,
@@ -45,20 +47,69 @@ final class ScheduleScreenViewModel: ObservableObject {
                 date: date,
                 transfers: transfers
             )
+            
+            rebuildDisplayedSchedule()
+            
         } catch {
             if let repoError = error as? RepositoryError {
                 
                 switch repoError {
                 case .noInternet:
                     errorState = .noInternet
+                    displayedSchedule = []
                 case .server:
                     errorState = .server
+                    displayedSchedule = []
                 case .dataNotFound:
                     schedule = []
+                    displayedSchedule = []
+                    errorState = nil
                 }
             } else {
                 errorState = .server
+                displayedSchedule = []
             }
         }
+    }
+
+    // MARK: - Filtering
+    
+    @MainActor
+    func applyFilters(_ newFilters: ScheduleFilters) {
+        filters = newFilters
+        rebuildDisplayedSchedule()
+    }
+    
+    @MainActor
+    private func rebuildDisplayedSchedule() {
+        var result = schedule
+
+        // 1) Фильтр по пересадкам
+        switch filters.transfers {
+        case .all:
+            break
+        case .onlyDirect:
+            result = result.filter { !$0.hasTransfers }
+        }
+
+        // 2) Фильтр по времени отправления
+        if !filters.departureTimeRanges.isEmpty {
+            result = result.filter { item in
+                guard let hour = departureHour(from: item.departureTimeTitle) else { return false }
+                return filters.departureTimeRanges.contains { $0.contains(hour: hour) }
+            }
+        }
+
+        displayedSchedule = result
+    }
+    
+    //MARK: - Helper
+    
+    // Перевод строки в число для сравнения с выбранным диапазоном
+    private func departureHour(from timeTitle: String) -> Int? {
+        let parts = timeTitle.split(separator: ":")
+        guard parts.count == 2,
+              let hour = Int(parts[0]) else { return nil }
+        return hour
     }
 }
