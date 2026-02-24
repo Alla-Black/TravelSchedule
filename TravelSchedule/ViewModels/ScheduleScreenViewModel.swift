@@ -7,12 +7,16 @@ final class ScheduleScreenViewModel: ObservableObject {
     private let to: Station
     private let date: Date
     private let transfers: Bool
-    private var filters: ScheduleFilters = .default
     
     @Published private(set) var schedule: [ScheduleCardItem] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorState: AppErrorState? = nil
     @Published private(set) var displayedSchedule: [ScheduleCardItem] = []
+    @Published private(set) var filters: ScheduleFilters = .default
+
+    var hasActiveFilters: Bool {
+        filters != .default
+    }
     
     init(
         repository: ScheduleRepository,
