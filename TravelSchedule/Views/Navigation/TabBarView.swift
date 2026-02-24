@@ -19,6 +19,7 @@ struct TabBarView: View {
     @State private var selection: Tab = .main
     @StateObject private var navigationModel = NavigationModel()
     @StateObject private var routeModel = RouteSelectionModel()
+    @StateObject private var filtersModel = ScheduleFiltersModel()
     
     // MARK: - Initializers
     
@@ -69,6 +70,7 @@ struct TabBarView: View {
             }
             .environmentObject(routeModel)
             .environmentObject(navigationModel)
+            .environmentObject(filtersModel)
             .tabItem {
                 Image(.mainItem)
             }

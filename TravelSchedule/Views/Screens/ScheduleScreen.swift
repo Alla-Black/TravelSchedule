@@ -3,6 +3,7 @@ import SwiftUI
 struct ScheduleScreen: View {
     @StateObject private var viewModel: ScheduleScreenViewModel
     @EnvironmentObject private var navigationModel: NavigationModel
+    @EnvironmentObject private var filtersModel: ScheduleFiltersModel
     
     let from: Selection
     let to: Selection
@@ -93,6 +94,9 @@ struct ScheduleScreen: View {
         .toolbar(.hidden, for: .tabBar)
         .task {
             await viewModel.load()
+        }
+        .onChange(of: filtersModel.filters) {
+            viewModel.applyFilters(filtersModel.filters)
         }
     }
 }

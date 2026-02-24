@@ -7,11 +7,11 @@ final class ScheduleScreenViewModel: ObservableObject {
     private let to: Station
     private let date: Date
     private let transfers: Bool
+    private var filters: ScheduleFilters = .default
     
     @Published private(set) var schedule: [ScheduleCardItem] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorState: AppErrorState? = nil
-    @Published private(set) var filters: ScheduleFilters = .default
     @Published private(set) var displayedSchedule: [ScheduleCardItem] = []
     
     init(
@@ -71,7 +71,7 @@ final class ScheduleScreenViewModel: ObservableObject {
             }
         }
     }
-
+    
     // MARK: - Filtering
     
     @MainActor
@@ -83,7 +83,7 @@ final class ScheduleScreenViewModel: ObservableObject {
     @MainActor
     private func rebuildDisplayedSchedule() {
         var result = schedule
-
+        
         // 1) Фильтр по пересадкам
         switch filters.transfers {
         case .all:
@@ -91,7 +91,7 @@ final class ScheduleScreenViewModel: ObservableObject {
         case .onlyDirect:
             result = result.filter { !$0.hasTransfers }
         }
-
+        
         // 2) Фильтр по времени отправления
         if !filters.departureTimeRanges.isEmpty {
             result = result.filter { item in
@@ -99,7 +99,7 @@ final class ScheduleScreenViewModel: ObservableObject {
                 return filters.departureTimeRanges.contains { $0.contains(hour: hour) }
             }
         }
-
+        
         displayedSchedule = result
     }
     

@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct ScheduleFiltersScreen: View {
+    @EnvironmentObject private var filtersModel: ScheduleFiltersModel
+    @EnvironmentObject private var navigationModel: NavigationModel
+    
     @StateObject private var viewModel = ScheduleFiltersViewModel()
     
     private enum SectionType: CaseIterable {
@@ -43,7 +46,8 @@ struct ScheduleFiltersScreen: View {
             .safeAreaInset(edge: .bottom) {
                 if viewModel.isApplyEnabled {
                     Button("Применить") {
-                        
+                        filtersModel.filters = viewModel.filters
+                        navigationModel.pop()
                     }
                     .font(.system(size:17, weight: .bold))
                     .foregroundColor(.whiteUniversal)
@@ -55,6 +59,10 @@ struct ScheduleFiltersScreen: View {
                     .padding(.bottom, 24)
                 }
             }
+        }
+        
+        .onAppear {
+            viewModel.filters = filtersModel.filters
         }
     }
 }
