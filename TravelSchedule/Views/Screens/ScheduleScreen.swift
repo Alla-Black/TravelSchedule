@@ -101,6 +101,8 @@ struct ScheduleScreen: View {
                 }
             }
             .toolbar(.hidden, for: .tabBar)
+            .navigationTitle("")
+            .navigationBarTitleDisplayMode(.inline)
             .task {
                 await viewModel.load()
             }

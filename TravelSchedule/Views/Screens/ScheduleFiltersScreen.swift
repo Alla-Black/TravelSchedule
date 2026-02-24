@@ -60,7 +60,7 @@ struct ScheduleFiltersScreen: View {
                 }
             }
         }
-        
+        .toolbar(.hidden, for: .tabBar)
         .onAppear {
             viewModel.filters = filtersModel.filters
         }
