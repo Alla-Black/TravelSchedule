@@ -69,7 +69,6 @@ struct ScheduleScreen: View {
                         }
                     }
                     .padding(.horizontal, 16)
-                    
                 }
             }
             
