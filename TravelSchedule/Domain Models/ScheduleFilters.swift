@@ -1,6 +1,6 @@
 import Foundation
 
-struct ScheduleFilters: Equatable {
+struct ScheduleFilters: Equatable { // можно сравнивать весь объект целиком
     var departureTimeRanges: Set<DepartureTimeRange>
     var transfers: TransfersOption
     

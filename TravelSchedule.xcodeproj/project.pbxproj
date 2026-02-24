@@ -23,6 +23,7 @@
 		4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A972F339CAD00F8920D /* CarrierInfoService.swift */; };
 		4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148AAA2F33C3C000F8920D /* AllStationsService.swift */; };
 		4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */; };
+		4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */; };
 		4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFA22F3E082B006FD2EC /* Configuration.plist */; };
 		4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */; };
 		4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */; };
@@ -80,6 +81,7 @@
 		4D148A972F339CAD00F8920D /* CarrierInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoService.swift; sourceTree = "<group>"; };
 		4D148AAA2F33C3C000F8920D /* AllStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationsService.swift; sourceTree = "<group>"; };
 		4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFilters.swift; sourceTree = "<group>"; };
+		4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersViewModel.swift; sourceTree = "<group>"; };
 		4D9FCFA22F3E082B006FD2EC /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.example.plist; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */,
 				4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */,
 				4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */,
+				4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */,
 				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
 				4DD9BAC22F433F050020B81E /* Direction.swift in Sources */,
+				4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
 				4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */,
 				4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */,
