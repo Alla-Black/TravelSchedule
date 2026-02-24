@@ -5,4 +5,5 @@ enum Screen: Hashable {
     case station(Direction, City)
     case schedule(from: Selection, to: Selection)
     case scheduleFilters
+    case carrierInfo
 }

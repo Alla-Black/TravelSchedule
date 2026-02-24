@@ -66,50 +66,56 @@ struct ScheduleScreen: View {
                     ScrollView {
                         LazyVStack(spacing: 8) {
                             ForEach(viewModel.displayedSchedule) { item in
-                                ScheduleCardView(item: item)
+                                Button {
+                                    navigationModel.push(.carrierInfo)
+                                } label: {
+                                    ScheduleCardView(item: item)
+                                }
+                                .buttonStyle(.plain)
                             }
                         }
                     }
-                    .padding(.horizontal, 16)
-                }
-            }
-            
-            VStack {
-                if shouldShowBottomButton {
-                    Spacer()
-                    Button {
-                        navigationModel.push(.scheduleFilters)
-                    } label: {
-                        HStack(spacing: 4) {
-                            Text("Уточнить время")
-                            
-                            if viewModel.hasActiveFilters {
-                                Circle()
-                                    .frame(width: 8, height: 8)
-                                    .foregroundStyle(Color.redUniversal)
-                            }
-                        }
-                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
                     }
-                    .font(.system(size:17, weight: .bold))
-                    .foregroundColor(.whiteUniversal)
-                    .padding(.vertical, 20)
-                    .background(.blueUniversal)
-                    .cornerRadius(16)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 24)
+                }
+                
+                VStack {
+                    if shouldShowBottomButton {
+                        Spacer()
+                        Button {
+                            navigationModel.push(.scheduleFilters)
+                        } label: {
+                            HStack(spacing: 4) {
+                                Text("Уточнить время")
+                                
+                                if viewModel.hasActiveFilters {
+                                    Circle()
+                                        .frame(width: 8, height: 8)
+                                        .foregroundStyle(Color.redUniversal)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .font(.system(size:17, weight: .bold))
+                        .foregroundColor(.whiteUniversal)
+                        .padding(.vertical, 20)
+                        .background(.blueUniversal)
+                        .cornerRadius(16)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 24)
                 }
             }
-            .toolbar(.hidden, for: .tabBar)
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
-            .task {
-                await viewModel.load()
-            }
-            .onChange(of: filtersModel.filters) {
-                viewModel.applyFilters(filtersModel.filters)
-            }
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.load()
+        }
+        .onChange(of: filtersModel.filters) {
+            viewModel.applyFilters(filtersModel.filters)
         }
     }
 }
+
 

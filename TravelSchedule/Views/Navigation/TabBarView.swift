@@ -65,6 +65,9 @@ struct TabBarView: View {
                             
                         case .scheduleFilters:
                             ScheduleFiltersScreen()
+                            
+                        case .carrierInfo:
+                            CarrierInfoScreen()
                         }
                     }
             }
