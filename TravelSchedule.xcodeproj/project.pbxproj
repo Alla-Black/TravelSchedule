@@ -24,6 +24,7 @@
 		4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148AAA2F33C3C000F8920D /* AllStationsService.swift */; };
 		4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */; };
 		4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */; };
+		4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */; };
 		4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFA22F3E082B006FD2EC /* Configuration.plist */; };
 		4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */; };
 		4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */; };
@@ -82,6 +83,7 @@
 		4D148AAA2F33C3C000F8920D /* AllStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationsService.swift; sourceTree = "<group>"; };
 		4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFilters.swift; sourceTree = "<group>"; };
 		4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersViewModel.swift; sourceTree = "<group>"; };
+		4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersScreen.swift; sourceTree = "<group>"; };
 		4D9FCFA22F3E082B006FD2EC /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.example.plist; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */,
 				4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */,
 				4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */,
+				4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
 				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
 				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
+				4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
 				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
