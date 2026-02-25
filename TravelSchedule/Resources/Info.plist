@@ -6,6 +6,8 @@
 	<string> $(API_KEY)</string>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIImageName</key>
+		<string>SplashScreen</string>
 		<key>UIColorName</key>
 		<string>Black Universal</string>
 	</dict>
