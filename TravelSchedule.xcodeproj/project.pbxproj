@@ -27,9 +27,7 @@
 		4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */; };
 		4D9D28102F4E1B840045E117 /* ScheduleFiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */; };
 		4D9D281B2F4E32080045E117 /* CarrierInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */; };
-		4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFA22F3E082B006FD2EC /* Configuration.plist */; };
 		4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */; };
-		4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */; };
 		4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0562F3E6213006FD2EC /* MainScreen.swift */; };
 		4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD05C2F3E63E4006FD2EC /* TabBarView.swift */; };
 		4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */; };
@@ -88,9 +86,8 @@
 		4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersScreen.swift; sourceTree = "<group>"; };
 		4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersModel.swift; sourceTree = "<group>"; };
 		4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoScreen.swift; sourceTree = "<group>"; };
-		4D9FCFA22F3E082B006FD2EC /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		4D9D2A0E2F4F26390045E117 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.example.plist; sourceTree = "<group>"; };
 		4D9FCFCE2F3E181C006FD2EC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4D9FD0322F3E4B00006FD2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D9FD0562F3E6213006FD2EC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -147,6 +144,7 @@
 		4D1489FB2F2BF12B00F8920D = {
 			isa = PBXGroup;
 			children = (
+				4D9D2A0E2F4F26390045E117 /* Secrets.xcconfig */,
 				4D9FCFCE2F3E181C006FD2EC /* .gitignore */,
 				4D148A1D2F30EC2E00F8920D /* TravelSchedule */,
 				4D148A052F2BF12B00F8920D /* Products */,
@@ -215,8 +213,6 @@
 		4D9FCFAC2F3E0EC3006FD2EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D9FCFA22F3E082B006FD2EC /* Configuration.plist */,
-				4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */,
 				4D148A1A2F30EC2E00F8920D /* Assets.xcassets */,
 				4D9FD0322F3E4B00006FD2EC /* Info.plist */,
 			);
@@ -407,9 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */,
 				4D148A3C2F3133D300F8920D /* openapi.yaml in Resources */,
-				4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */,
 				4D148A3D2F3133D300F8920D /* openapi-generator-config.yaml in Resources */,
 				4D148A1E2F30EC2E00F8920D /* Assets.xcassets in Resources */,
 			);
@@ -608,6 +602,7 @@
 		};
 		4D148A102F2BF12C00F8920D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D9D2A0E2F4F26390045E117 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -644,6 +639,7 @@
 		};
 		4D148A112F2BF12C00F8920D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D9D2A0E2F4F26390045E117 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
