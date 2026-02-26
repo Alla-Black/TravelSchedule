@@ -6,8 +6,6 @@
 	<string>8034fa20-6377-41e5-b6fc-06c455f42918</string>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageName</key>
-		<string>SplashScreen</string>
 		<key>UIColorName</key>
 		<string>Black Universal</string>
 	</dict>
