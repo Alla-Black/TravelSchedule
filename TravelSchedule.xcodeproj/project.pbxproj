@@ -22,9 +22,49 @@
 		4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A8F2F33944F00F8920D /* NearestCityService.swift */; };
 		4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A972F339CAD00F8920D /* CarrierInfoService.swift */; };
 		4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148AAA2F33C3C000F8920D /* AllStationsService.swift */; };
-		4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFA22F3E082B006FD2EC /* Configuration.plist */; };
+		4D8A922A2F55E83D00D0B843 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A92292F55E83D00D0B843 /* LoadState.swift */; };
+		4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */; };
+		4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */; };
+		4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */; };
+		4D9D28102F4E1B840045E117 /* ScheduleFiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */; };
+		4D9D281B2F4E32080045E117 /* CarrierInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */; };
 		4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */; };
-		4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */; };
+		4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0562F3E6213006FD2EC /* MainScreen.swift */; };
+		4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD05C2F3E63E4006FD2EC /* TabBarView.swift */; };
+		4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */; };
+		4D9FD0742F3E658E006FD2EC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0722F3E658E006FD2EC /* SplashScreen.swift */; };
+		4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0832F3E73AE006FD2EC /* StoriesCarouselView.swift */; };
+		4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */; };
+		4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */; };
+		4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0922F3E751E006FD2EC /* SwapButton.swift */; };
+		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
+		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
+		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
+		4DD9BAC62F433F6C0020B81E /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC52F433F6C0020B81E /* Selection.swift */; };
+		4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */; };
+		4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */; };
+		4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB002F43965B0020B81E /* ErrorView.swift */; };
+		4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB132F43A5850020B81E /* StationsRepository.swift */; };
+		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */; };
+		4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */; };
+		4DD9BB4F2F44FC450020B81E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */; };
+		4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB902F45E9810020B81E /* PickerRowView.swift */; };
+		4DD9BBB52F4606110020B81E /* PickerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BBB42F4606110020B81E /* PickerListView.swift */; };
+		4DD9BBDC2F46501A0020B81E /* CityPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */; };
+		4DD9BC082F4717510020B81E /* StationPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */; };
+		4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */; };
+		4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC0E2F475A030020B81E /* Screen.swift */; };
+		4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC112F475BB20020B81E /* NavigationModel.swift */; };
+		4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */; };
+		4DD9BC2B2F4A05B80020B81E /* ScheduleCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */; };
+		4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */; };
+		4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */; };
+		4DD9BC362F4B59DB0020B81E /* DefaultScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */; };
+		4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */; };
+		4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */; };
+		4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */; };
+		4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */; };
+		4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +82,50 @@
 		4D148A8F2F33944F00F8920D /* NearestCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestCityService.swift; sourceTree = "<group>"; };
 		4D148A972F339CAD00F8920D /* CarrierInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoService.swift; sourceTree = "<group>"; };
 		4D148AAA2F33C3C000F8920D /* AllStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationsService.swift; sourceTree = "<group>"; };
-		4D9FCFA22F3E082B006FD2EC /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		4D8A92292F55E83D00D0B843 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFilters.swift; sourceTree = "<group>"; };
+		4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersViewModel.swift; sourceTree = "<group>"; };
+		4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersScreen.swift; sourceTree = "<group>"; };
+		4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersModel.swift; sourceTree = "<group>"; };
+		4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoScreen.swift; sourceTree = "<group>"; };
 		4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.example.plist; sourceTree = "<group>"; };
-		4D9FCFCE2F3E181C006FD2EC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4D9FD0322F3E4B00006FD2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D9FD0562F3E6213006FD2EC /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		4D9FD05C2F3E63E4006FD2EC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		4D9FD0722F3E658E006FD2EC /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		4D9FD0832F3E73AE006FD2EC /* StoriesCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCarouselView.swift; sourceTree = "<group>"; };
+		4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputCardView.swift; sourceTree = "<group>"; };
+		4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFieldsView.swift; sourceTree = "<group>"; };
+		4D9FD0922F3E751E006FD2EC /* SwapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
+		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		4DD9BAC52F433F6C0020B81E /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
+		4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsReferenceParser.swift; sourceTree = "<group>"; };
+		4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorState.swift; sourceTree = "<group>"; };
+		4DD9BB002F43965B0020B81E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		4DD9BB132F43A5850020B81E /* StationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRepository.swift; sourceTree = "<group>"; };
+		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultStationsRepository.swift .swift"; sourceTree = "<group>"; };
+		4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerViewModel.swift; sourceTree = "<group>"; };
+		4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		4DD9BB902F45E9810020B81E /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
+		4DD9BBB42F4606110020B81E /* PickerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerListView.swift; sourceTree = "<group>"; };
+		4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerScreen.swift; sourceTree = "<group>"; };
+		4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerViewModel.swift; sourceTree = "<group>"; };
+		4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerScreen.swift; sourceTree = "<group>"; };
+		4DD9BC0E2F475A030020B81E /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		4DD9BC112F475BB20020B81E /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionModel.swift; sourceTree = "<group>"; };
+		4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardItem.swift; sourceTree = "<group>"; };
+		4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleResponseParser.swift; sourceTree = "<group>"; };
+		4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRepository.swift; sourceTree = "<group>"; };
+		4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultScheduleRepository.swift; sourceTree = "<group>"; };
+		4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreen.swift; sourceTree = "<group>"; };
+		4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenViewModel.swift; sourceTree = "<group>"; };
+		4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
+		4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +144,6 @@
 		4D1489FB2F2BF12B00F8920D = {
 			isa = PBXGroup;
 			children = (
-				4D9FCFCE2F3E181C006FD2EC /* .gitignore */,
 				4D148A1D2F30EC2E00F8920D /* TravelSchedule */,
 				4D148A052F2BF12B00F8920D /* Products */,
 			);
@@ -81,8 +160,11 @@
 		4D148A1D2F30EC2E00F8920D /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D9FCFB92F3E0F09006FD2EC /* App */,
 				4D148A502F313F8A00F8920D /* Views */,
+				4DD9BB422F449C770020B81E /* ViewModels */,
+				4DD9BAD02F434DF30020B81E /* Data */,
 				4D148A452F313F1300F8920D /* Services */,
 				4D148A352F31299E00F8920D /* openapi */,
 				4D9FCFAC2F3E0EC3006FD2EC /* Resources */,
@@ -117,7 +199,11 @@
 		4D148A502F313F8A00F8920D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4D9FD0732F3E658E006FD2EC /* Screens */,
+				4D9FD07F2F3E65BB006FD2EC /* UIViews */,
+				4DD9BAF82F4395B90020B81E /* States */,
 				4D148A1B2F30EC2E00F8920D /* ContentView.swift */,
+				4D9FD0622F3E63F7006FD2EC /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,9 +211,8 @@
 		4D9FCFAC2F3E0EC3006FD2EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D9FCFA22F3E082B006FD2EC /* Configuration.plist */,
-				4D9FCFBD2F3E12B0006FD2EC /* Configuration.example.plist */,
 				4D148A1A2F30EC2E00F8920D /* Assets.xcassets */,
+				4D9FD0322F3E4B00006FD2EC /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -139,6 +224,113 @@
 				4D9FCFB82F3E0F09006FD2EC /* AppConfiguration.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4D9FD0622F3E63F7006FD2EC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4D9FD05C2F3E63E4006FD2EC /* TabBarView.swift */,
+				4DD9BC0E2F475A030020B81E /* Screen.swift */,
+				4DD9BC112F475BB20020B81E /* NavigationModel.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4D9FD0732F3E658E006FD2EC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4D9FD0722F3E658E006FD2EC /* SplashScreen.swift */,
+				4D9FD0562F3E6213006FD2EC /* MainScreen.swift */,
+				4D9FD0682F3E647A006FD2EC /* SettingsScreen.swift */,
+				4DD9BBDB2F46501A0020B81E /* CityPickerScreen.swift */,
+				4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */,
+				4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */,
+				4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */,
+				4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4D9FD07F2F3E65BB006FD2EC /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				4D9FD0832F3E73AE006FD2EC /* StoriesCarouselView.swift */,
+				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
+				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
+				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,
+				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
+				4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */,
+				4DD9BB902F45E9810020B81E /* PickerRowView.swift */,
+				4DD9BBB42F4606110020B81E /* PickerListView.swift */,
+				4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */,
+				4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		4DD9BAB92F433ECD0020B81E /* Domain Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BAB82F433ECD0020B81E /* City.swift */,
+				4DD9BABD2F433EE10020B81E /* Station.swift */,
+				4DD9BAC12F433F050020B81E /* Direction.swift */,
+				4DD9BAC52F433F6C0020B81E /* Selection.swift */,
+				4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */,
+				4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */,
+			);
+			path = "Domain Models";
+			sourceTree = "<group>";
+		};
+		4DD9BAD02F434DF30020B81E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB0F2F43A55A0020B81E /* Repositories */,
+				4DD9BAE62F435DCE0020B81E /* Parsing */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4DD9BAE62F435DCE0020B81E /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */,
+				4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		4DD9BAF82F4395B90020B81E /* States */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */,
+				4DD9BC142F4794F90020B81E /* RouteSelectionModel.swift */,
+				4DD9BC382F4B5A8C0020B81E /* RepositoryError.swift */,
+				4D8A92292F55E83D00D0B843 /* LoadState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		4DD9BB0F2F43A55A0020B81E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB132F43A5850020B81E /* StationsRepository.swift */,
+				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */,
+				4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */,
+				4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4DD9BB422F449C770020B81E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */,
+				4DD9BC072F4717510020B81E /* StationPickerViewModel.swift */,
+				4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */,
+				4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */,
+				4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D9FCFBE2F3E12B0006FD2EC /* Configuration.example.plist in Resources */,
 				4D148A3C2F3133D300F8920D /* openapi.yaml in Resources */,
-				4D9FCFA32F3E082B006FD2EC /* Configuration.plist in Resources */,
 				4D148A3D2F3133D300F8920D /* openapi-generator-config.yaml in Resources */,
 				4D148A1E2F30EC2E00F8920D /* Assets.xcassets in Resources */,
 			);
@@ -225,16 +415,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */,
+				4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */,
+				4D9FD0742F3E658E006FD2EC /* SplashScreen.swift in Sources */,
 				4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */,
+				4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */,
+				4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */,
+				4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */,
 				4D148A4A2F313F2C00F8920D /* NearestStationsService.swift in Sources */,
+				4DD9BBB52F4606110020B81E /* PickerListView.swift in Sources */,
+				4DD9BC2B2F4A05B80020B81E /* ScheduleCardItem.swift in Sources */,
+				4D9D281B2F4E32080045E117 /* CarrierInfoScreen.swift in Sources */,
 				4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */,
+				4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */,
+				4DD9BBDC2F46501A0020B81E /* CityPickerScreen.swift in Sources */,
 				4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */,
+				4DD9BABA2F433ECD0020B81E /* City.swift in Sources */,
+				4DD9BC082F4717510020B81E /* StationPickerViewModel.swift in Sources */,
+				4D8A922A2F55E83D00D0B843 /* LoadState.swift in Sources */,
+				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
+				4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */,
+				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
+				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
+				4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
+				4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */,
+				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
+				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
+				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
+				4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */,
+				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
+				4D9D28102F4E1B840045E117 /* ScheduleFiltersModel.swift in Sources */,
+				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
+				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
+				4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */,
+				4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */,
 				4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */,
+				4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */,
+				4DD9BAE72F435DCE0020B81E /* StationsReferenceParser.swift in Sources */,
+				4DD9BAC22F433F050020B81E /* Direction.swift in Sources */,
+				4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */,
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
+				4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */,
+				4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
+				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
+				4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */,
+				4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */,
+				4DD9BB4F2F44FC450020B81E /* SearchBarView.swift in Sources */,
+				4DD9BAC62F433F6C0020B81E /* Selection.swift in Sources */,
+				4DD9BC362F4B59DB0020B81E /* DefaultScheduleRepository.swift in Sources */,
 				4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,9 +609,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelSchedule/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;
@@ -413,9 +645,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelSchedule/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17;

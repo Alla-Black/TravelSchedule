@@ -1,16 +1,28 @@
 import Foundation
 
+enum AppConfigurationError: Error, LocalizedError {
+    case missingInfoPlistValue(key: String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .missingInfoPlistValue(let key):
+            return "Missing or empty '\(key)' in Info.plist"
+        }
+    }
+}
+
 enum AppConfiguration {
+    private static let infoPlistKey = "YandexSchedulesAPIKey"
+    
     static var apiKey: String {
         guard
-            let url = Bundle.main.url(forResource: "Configuration", withExtension: "plist"),
-            let data = try? Data(contentsOf: url),
-            let plist = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: Any],
-            let key = plist["API_KEY"] as? String
+            let apiKey = Bundle.main.object(forInfoDictionaryKey: infoPlistKey) as? String,
+            !apiKey.isEmpty
         else {
-            fatalError("API_KEY not found in Configuration.plist")
+            let error = AppConfigurationError.missingInfoPlistValue(key: infoPlistKey)
+            preconditionFailure(error.localizedDescription)
         }
         
-        return key
+        return apiKey
     }
 }

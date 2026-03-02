@@ -1,0 +1,131 @@
+import SwiftUI
+
+struct ScheduleScreen: View {
+    @StateObject private var viewModel: ScheduleScreenViewModel
+    @EnvironmentObject private var navigationModel: NavigationModel
+    @EnvironmentObject private var filtersModel: ScheduleFiltersModel
+    
+    let from: Selection
+    let to: Selection
+    
+    private var routeTitle: String {
+        "\(from.city.title) (\(from.station.title)) → \(to.city.title) (\(to.station.title))"
+    }
+    
+    private var shouldShowBottomButton: Bool {
+        switch viewModel.state {
+        case .loading, .error:
+            return false
+        case .idle, .loaded:
+            return true
+        }
+    }
+    
+    init(repository: ScheduleRepository = DefaultScheduleRepository(),
+         from: Selection,
+         to: Selection
+    ) {
+        self.from = from
+        self.to = to
+        
+        _viewModel = StateObject(
+            wrappedValue: ScheduleScreenViewModel(
+                repository: repository,
+                from: from.station,
+                to: to.station,
+                date: Date(),
+                transfers: true
+            )
+        )
+    }
+    
+    var body: some View {
+        ZStack {
+            Color.whiteDayNight.ignoresSafeArea()
+            
+            VStack(alignment: .leading, spacing: 16) {
+                Text(routeTitle)
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundStyle(Color.blackDayNight)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                    .lineLimit(nil)
+                
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                case .error(let error):
+                    ErrorView(state: error)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                case .idle, .loaded:
+                    if viewModel.displayedSchedule.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text("Вариантов нет")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundStyle(Color.blackDayNight)
+                            Spacer()
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        ScrollView {
+                            LazyVStack(spacing: 8) {
+                                ForEach(viewModel.displayedSchedule) { item in
+                                    Button {
+                                        navigationModel.push(.carrierInfo)
+                                    } label: {
+                                        ScheduleCardView(item: item)
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 16)
+                    }
+                }
+            }
+            
+            VStack {
+                if shouldShowBottomButton {
+                    Spacer()
+                    Button {
+                        navigationModel.push(.scheduleFilters)
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text("Уточнить время")
+                            
+                            if viewModel.hasActiveFilters {
+                                Circle()
+                                    .frame(width: 8, height: 8)
+                                    .foregroundStyle(Color.redUniversal)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .font(.system(size:17, weight: .bold))
+                    .foregroundColor(.whiteUniversal)
+                    .padding(.vertical, 20)
+                    .background(.blueUniversal)
+                    .cornerRadius(16)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 24)
+                }
+            }
+            
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await viewModel.load()
+        }
+        .onChange(of: filtersModel.filters) {
+            viewModel.applyFilters(filtersModel.filters)
+        }
+    }
+}
+
