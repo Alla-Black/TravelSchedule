@@ -1,5 +1,12 @@
 import Foundation
 
+private protocol DateParsingFormatter {
+    func date(from string: String) -> Date?
+}
+
+extension ISO8601DateFormatter: DateParsingFormatter {}
+extension DateFormatter: DateParsingFormatter {}
+
 struct ScheduleResponseParser {
     private enum Constants {
         static let unknownCarrier = "Перевозчик неизвестен"
@@ -115,13 +122,12 @@ struct ScheduleResponseParser {
     // MARK: - Date Formatting
     
     private func parseISO(_ raw: String) -> Date? {
-        if let date = Self.isoFormatterWithFractional.date(from: raw) {
-            return date
+        for formatter in Self.isoFormatters {
+            if let date = formatter.date(from: raw) {
+                return date
+            }
         }
-        if let date = Self.isoFormatter.date(from: raw) {
-            return date
-        }
-        return Self.fallbackFormatter.date(from: raw)
+        return nil
     }
     
     private func formatDate(from raw: String) -> String {
@@ -139,6 +145,12 @@ struct ScheduleResponseParser {
     }
     
     // MARK: - Static Formatters
+    
+    private static let isoFormatters: [DateParsingFormatter] = [
+        isoFormatterWithFractional,
+        isoFormatter,
+        fallbackFormatter
+    ]
     
     private static let isoFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
