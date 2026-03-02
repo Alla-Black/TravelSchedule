@@ -31,64 +31,48 @@ struct StationPickerScreen: View {
                         viewModel.applyFilter()
                     }
                 
-                // 1. Если загрузка
-                if viewModel.isLoading {
+                switch viewModel.state {
+                case .loading:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                    // 2. Обработка ошибок
-                } else if let error = viewModel.errorState {
+                case .error(let error):
                     ErrorView(state: error)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                }
-                // 3) Пусто без поиска: ничего не введено, но список пустой
-                else if viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
-                    VStack {
-                        Spacer()
-                        Text(Constants.emptyStationsTitle)
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.blackDayNight)
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                case .idle, .loaded:
                     
-                    // 4. Пусто после поиска: ввели текст, но совпадений нет
-                } else if
-                    !viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
-                    VStack {
-                        Spacer()
-                        Text(Constants.emptyStationsTitle)
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.blackDayNight)
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
-                    // 5. Список станций
-                } else {
-                    PickerListView(
-                        items: viewModel.filteredStations,
-                        rowTitle:  { $0.title },
-                        onSelect: { station in
-                            let selection = Selection(city: city, station: station)
-                            onSelect(selection)
+                    if viewModel.filteredStations.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text(Constants.emptyStationsTitle)
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundStyle(Color.blackDayNight)
+                            Spacer()
                         }
-                    )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        PickerListView(
+                            items: viewModel.filteredStations,
+                            rowTitle:  { $0.title },
+                            onSelect: { station in
+                                let selection = Selection(city: city, station: station)
+                                onSelect(selection)
+                            }
+                        )
+                    }
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text(Constants.navigationTitle)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundStyle(.blackDayNight)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(Constants.navigationTitle)
+                        .font(.system(size: 17, weight: .bold))
+                        .foregroundStyle(.blackDayNight)
+                }
             }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .task {
-            await viewModel.load()
+            .navigationBarTitleDisplayMode(.inline)
+            .task {
+                await viewModel.load()
+            }
         }
     }
 }
-
 

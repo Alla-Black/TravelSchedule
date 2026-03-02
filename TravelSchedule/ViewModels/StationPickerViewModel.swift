@@ -6,8 +6,7 @@ final class StationPickerViewModel: ObservableObject {
     
     @Published private(set) var stations: [Station] = []
     @Published private(set) var filteredStations: [Station] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var errorState: AppErrorState? = nil
+    @Published private(set) var state: LoadState = .idle
     @Published var query: String = ""
     
     // MARK: - Computed properties
@@ -41,35 +40,34 @@ final class StationPickerViewModel: ObservableObject {
     
     @MainActor
     func load() async {
-        if isLoading { return }
+        if case .loading = state { return }
+        
         if !stations.isEmpty {
             applyFilter()
+            state = .loaded
             return
         }
         
-        isLoading = true
-        errorState = nil
-        
-        defer {
-            isLoading = false
-        }
+        state = .loading
         
         do {
             stations = try await repository.getStations(cityId: city.id)
             applyFilter()
+            state = .loaded
         } catch {
             if let repoError = error as? RepositoryError {
                 switch repoError {
                 case .noInternet:
-                    errorState = .noInternet
+                    state = .error(.noInternet)
                 case .server:
-                    errorState = .server
+                    state = .error(.server)
                 case .dataNotFound:
                     stations = []
                     filteredStations = []
+                    state = .loaded
                 }
             } else {
-                errorState = .server
+                state = .error(.server)
             }
         }
     }
