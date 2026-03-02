@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct StationPickerScreen: View {
+    private enum Constants {
+        static let emptyStationsTitle = "Станций не найдено"
+        static let navigationTitle = "Выбор станции"
+    }
+    
     @StateObject private var viewModel: StationPickerViewModel
     
     private let city: City
@@ -40,7 +45,7 @@ struct StationPickerScreen: View {
                 else if viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
                     VStack {
                         Spacer()
-                        Text("Станций не найдено")
+                        Text(Constants.emptyStationsTitle)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundStyle(Color.blackDayNight)
                         Spacer()
@@ -52,7 +57,7 @@ struct StationPickerScreen: View {
                     !viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredStations.isEmpty {
                     VStack {
                         Spacer()
-                        Text("Станций не найдено")
+                        Text(Constants.emptyStationsTitle)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundStyle(Color.blackDayNight)
                         Spacer()
@@ -74,7 +79,7 @@ struct StationPickerScreen: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Выбор станции")
+                Text(Constants.navigationTitle)
                     .font(.system(size: 17, weight: .bold))
                     .foregroundStyle(.blackDayNight)
             }

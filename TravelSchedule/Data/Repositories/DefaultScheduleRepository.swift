@@ -4,14 +4,23 @@ import OpenAPIRuntime
 import os
 
 final class DefaultScheduleRepository: ScheduleRepository {
+    private enum Constants {
+            static let defaultSubsystem = "TravelSchedule"
+            static let loggerCategory = "ScheduleRepository"
+            static let apiDateFormat = "yyyy-MM-dd"
+            static let posixLocale = "en_US_POSIX"
+            static let error404Token = "statusCode: 404"
+            static let loadScheduleFailed = "Failed to load schedule between stations: "
+        }
+    
     // MARK: - Private Properties
     
     private let apikey: String = AppConfiguration.apiKey
     private let parser = ScheduleResponseParser()
     
     private let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier ?? "TravelSchedule",
-        category: "ScheduleRepository"
+        subsystem: Bundle.main.bundleIdentifier ?? Constants.defaultSubsystem,
+        category: Constants.loggerCategory
     )
     
     private var cache: [CacheKey: [ScheduleCardItem]] = [:]
@@ -20,8 +29,8 @@ final class DefaultScheduleRepository: ScheduleRepository {
     
     private static let apiDateFormatter: DateFormatter = {
         let f = DateFormatter()
-        f.dateFormat = "yyyy-MM-dd"
-        f.locale = Locale(identifier: "en_US_POSIX")
+        f.dateFormat = Constants.apiDateFormat
+        f.locale = Locale(identifier: Constants.posixLocale)
         f.timeZone = .current
         return f
     }()
@@ -75,7 +84,7 @@ final class DefaultScheduleRepository: ScheduleRepository {
             return parsed
             
         } catch {
-            logger.error("Failed to load schedule between stations: \(String(describing: error))")
+            logger.error("\(Constants.loadScheduleFailed)\(String(describing: error))")
             if let repoError = error as? RepositoryError {
                     throw repoError
                 }
@@ -84,7 +93,7 @@ final class DefaultScheduleRepository: ScheduleRepository {
                 throw RepositoryError.noInternet
             }
             let description = String(describing: error)
-            if description.contains("statusCode: 404") {
+            if description.contains(Constants.error404Token) {
                 throw RepositoryError.dataNotFound
             }
             throw RepositoryError.server

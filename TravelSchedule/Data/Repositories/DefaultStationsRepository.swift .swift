@@ -3,10 +3,17 @@ import OpenAPIURLSession
 import os
 
 final class DefaultStationsRepository: StationsRepository {
+    private enum Constants {
+        static let defaultSubsystem = "TravelSchedule"
+        static let loggerCategory = "StationsRepository"
+        static let loadAllStationsFailed = "Failed to load all stations: "
+        static let stationsNotFound = "Stations not found for cityId: "
+    }
+    
     private let apikey: String = AppConfiguration.apiKey
     private let parser = StationsReferenceParser()
     
-    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "TravelSchedule", category: "StationsRepository")
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? Constants.defaultSubsystem, category: Constants.loggerCategory)
     
     private var cachedCities: [City]?
     private var cachedStationsByCityId: [String: [Station]]?
@@ -32,10 +39,10 @@ final class DefaultStationsRepository: StationsRepository {
             cachedStationsByCityId = parsed.stationsByCityId
         } catch {
             if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
-                logger.error("Failed to load all stations: \(String(describing: error))")
+                logger.error("\(Constants.loadAllStationsFailed)\(String(describing: error))")
                 throw RepositoryError.noInternet
             } else {
-                logger.error("Failed to load all stations: \(String(describing: error))")
+                logger.error("\(Constants.loadAllStationsFailed)\(String(describing: error))")
                 throw RepositoryError.server
             }
         }
@@ -49,7 +56,7 @@ final class DefaultStationsRepository: StationsRepository {
     func getStations(cityId: String) async throws -> [Station] {
         try await loadIfNeeded()
         guard let stations = cachedStationsByCityId?[cityId] else {
-            logger.error("Stations not found for cityId: \(cityId)")
+            logger.error("\(Constants.stationsNotFound) \(cityId)")
             throw RepositoryError.dataNotFound
         }
         return stations.sorted(by: { $0.title < $1.title})

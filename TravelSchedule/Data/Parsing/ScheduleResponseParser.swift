@@ -1,6 +1,16 @@
 import Foundation
 
 struct ScheduleResponseParser {
+    private enum Constants {
+        static let unknownCarrier = "Перевозчик неизвестен"
+        static let dash = "—"
+        static let localeID = "ru_RU"
+        static let dateFormat = "d MMMM"
+        static let timeFormat = "HH:mm"
+        static let fallbackFormat = "yyyy-MM-dd HH:mm:ss"
+        static let httpsPrefix = "https:"
+    }
+    
     func parse(dto: Components.Schemas.Segments) -> [ScheduleCardItem] {
         let segments = dto.segments ?? []
         return segments.compactMap(mapSegment)
@@ -14,7 +24,7 @@ struct ScheduleResponseParser {
             return nil
         }
         
-        let carrierTitle = segment.thread?.carrier?.title ?? "Перевозчик неизвестен"
+        let carrierTitle = segment.thread?.carrier?.title ?? Constants.unknownCarrier
         let carrierLogoURL = makeLogoURL(from: segment.thread?.carrier?.logo)
         
         let dateTitle = formatDate(from: departureRaw)
@@ -48,7 +58,7 @@ struct ScheduleResponseParser {
     private func makeLogoURL(from raw: String?) -> URL? {
         guard var raw = raw, !raw.isEmpty else { return nil }
         if raw.hasPrefix("//") {
-            raw = "https:" + raw
+            raw = Constants.httpsPrefix + raw
         }
         return URL(string: raw)
     }
@@ -67,7 +77,7 @@ struct ScheduleResponseParser {
         guard let departureDate = parseISO(departureRaw),
               let durationSeconds,
               durationSeconds > 0 else {
-            return "—"
+            return Constants.dash
         }
         
         let computedArrival = departureDate.addingTimeInterval(TimeInterval(durationSeconds))
@@ -75,7 +85,7 @@ struct ScheduleResponseParser {
     }
     
     private func formatDuration(_ seconds: Int?) -> String {
-        guard let seconds, seconds > 0 else { return "—" }
+        guard let seconds, seconds > 0 else { return Constants.dash }
         
         let hoursDouble = Double(seconds) / 3600.0
         let roundedHours = max(1, Int(hoursDouble.rounded()))
@@ -115,12 +125,12 @@ struct ScheduleResponseParser {
     }
     
     private func formatDate(from raw: String) -> String {
-        guard let date = parseISO(raw) else { return "—" }
+        guard let date = parseISO(raw) else { return Constants.dash }
         return Self.dateFormatter.string(from: date)
     }
     
     private func formatTime(from raw: String) -> String {
-        guard let date = parseISO(raw) else { return "—" }
+        guard let date = parseISO(raw) else { return Constants.dash }
         return Self.timeFormatter.string(from: date)
     }
     
@@ -144,23 +154,23 @@ struct ScheduleResponseParser {
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
-        formatter.dateFormat = "d MMMM"
+        formatter.locale = Locale(identifier: Constants.localeID)
+        formatter.dateFormat = Constants.dateFormat
         return formatter
     }()
     
     private static let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
-        formatter.dateFormat = "HH:mm"
+        formatter.locale = Locale(identifier: Constants.localeID)
+        formatter.dateFormat = Constants.timeFormat
         return formatter
     }()
     
     private static let fallbackFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ru_RU")
+        formatter.locale = Locale(identifier: Constants.localeID)
         formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = Constants.fallbackFormat
         return formatter
     }()
 }
