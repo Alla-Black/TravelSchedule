@@ -6,9 +6,8 @@ final class CityPickerViewModel: ObservableObject {
     
     @Published private(set) var cities: [City] = []
     @Published private(set) var filteredCities: [City] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var errorState: AppErrorState? = nil
     @Published private(set) var popularCities: [City] = []
+    @Published private(set) var state: LoadState = .idle
     @Published var query: String = ""
     
     // MARK: - Computed properties
@@ -47,37 +46,38 @@ final class CityPickerViewModel: ObservableObject {
     
     @MainActor
     func load() async {
-        if isLoading { return }
+        if case .loading = state { return }
+        
         if !cities.isEmpty {
             updatePopularCitiesFromLoadedReference()
             applyFilter()
+            state = .loaded
             return
         }
         
-        isLoading = true
-        errorState = nil
-        
-        defer { // блок кода, который выполнится в самом конце функции при любом исходе
-            isLoading = false
-        }
+        state = .loading
         
         do {
             cities = try await repository.getCities()
             updatePopularCitiesFromLoadedReference()
             applyFilter()
+            state = .loaded
         } catch {
+            let mappedError: AppErrorState
+            
             if let repoError = error as? RepositoryError {
                 switch repoError {
                 case .noInternet:
-                    errorState = .noInternet
+                    mappedError = .noInternet
                 case .server:
-                    errorState = .server
+                    mappedError = .server
                 case .dataNotFound:
-                    errorState = .server
+                    mappedError = .server
                 }
             } else {
-                errorState = .server
+                mappedError = .server
             }
+            state = .error(mappedError)
         }
     }
     

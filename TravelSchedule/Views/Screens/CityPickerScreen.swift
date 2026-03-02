@@ -20,36 +20,36 @@ struct CityPickerScreen: View {
                         viewModel.applyFilter()
                     }
                 
-                // 1) Если загрузка
-                if viewModel.isLoading {
+                switch viewModel.state {
+                case .loading:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // 2) Обработка ошибок
-                } else if let error = viewModel.errorState {
+                case .error(let error):
                     ErrorView(state: error)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // 3) Когда город не найден
-                } else if !viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && viewModel.filteredCities.isEmpty {
-                    VStack {
-                        Spacer()
-                        Text("Город не найден")
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundStyle(Color.blackDayNight)
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity)
+                case .idle, .loaded:
+                    let trimmedQuery = viewModel.query.trimmingCharacters(in: .whitespacesAndNewlines)
                     
-                    // 4) Список городов
-                } else {
-                    PickerListView(
-                        items: viewModel.displayedCities,
-                        rowTitle: { $0.title },
-                        onSelect: {
-                            onSelectedCity($0)
+                    if !trimmedQuery.isEmpty && viewModel.filteredCities.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text("Город не найден")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundStyle(Color.blackDayNight)
+                            Spacer()
                         }
-                    )
+                        .frame(maxWidth: .infinity)
+                    } else {
+                        PickerListView(
+                            items: viewModel.displayedCities,
+                            rowTitle: { $0.title },
+                            onSelect: {
+                                onSelectedCity($0)
+                            }
+                        )
+                    }
                 }
             }
             .toolbar {
