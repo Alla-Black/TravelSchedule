@@ -87,12 +87,13 @@ final class StationsReferenceParser {
     }
     
     private func mergeStations(existing: [Station], new: [Station]) -> [Station] {
-        var seen = Set(existing.map(\.id)) // то же самое, что { $0.id }
-        var result = existing
-        for station in new where !seen.contains(station.id) {
-            result.append(station)
+        let combined = existing + new
+        var seen = Set<String>()
+        
+        return combined.filter { station in
+            guard !seen.contains(station.id) else { return false }
             seen.insert(station.id)
+            return true
         }
-        return result
     }
 }
