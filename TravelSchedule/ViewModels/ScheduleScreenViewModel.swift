@@ -2,21 +2,32 @@ import Foundation
 import Combine
 
 final class ScheduleScreenViewModel: ObservableObject {
-    private let repository: ScheduleRepository
-    private let from: Station
-    private let to: Station
-    private let date: Date
-    private let transfers: Bool
+    // MARK: - States
     
     @Published private(set) var schedule: [ScheduleCardItem] = []
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var errorState: AppErrorState? = nil
     @Published private(set) var displayedSchedule: [ScheduleCardItem] = []
     @Published private(set) var filters: ScheduleFilters = .default
-
+    
+    // MARK: - Computed properties
+    
     var hasActiveFilters: Bool {
         filters != .default
     }
+    
+    // MARK: - Dependencies
+    
+    private let repository: ScheduleRepository
+    
+    // MARK: - Private Properties
+    
+    private let from: Station
+    private let to: Station
+    private let date: Date
+    private let transfers: Bool
+    
+    // MARK: - Initializers
     
     init(
         repository: ScheduleRepository,
@@ -31,6 +42,8 @@ final class ScheduleScreenViewModel: ObservableObject {
         self.date = date
         self.transfers = transfers
     }
+    
+    // MARK: - Public Methods
     
     @MainActor
     func load() async {
@@ -84,6 +97,8 @@ final class ScheduleScreenViewModel: ObservableObject {
         rebuildDisplayedSchedule()
     }
     
+    // MARK: - Private Methods
+    
     @MainActor
     private func rebuildDisplayedSchedule() {
         var result = schedule
@@ -109,7 +124,7 @@ final class ScheduleScreenViewModel: ObservableObject {
     
     //MARK: - Helper
     
-    // Перевод строки в число для сравнения с выбранным диапазоном
+    /// Перевод строки в число для сравнения с выбранным диапазоном
     private func departureHour(from timeTitle: String) -> Int? {
         let parts = timeTitle.split(separator: ":")
         guard parts.count == 2,

@@ -2,7 +2,27 @@ import Foundation
 import Combine
 
 final class CityPickerViewModel: ObservableObject {
+    // MARK: - States
+    
+    @Published private(set) var cities: [City] = []
+    @Published private(set) var filteredCities: [City] = []
+    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var errorState: AppErrorState? = nil
+    @Published private(set) var popularCities: [City] = []
+    @Published var query: String = ""
+    
+    // MARK: - Computed properties
+    
+    var displayedCities: [City] {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines) // убираем пробелы и переносы строк, чтобы строка считалась пустой
+        return trimmedQuery.isEmpty ? popularCities : filteredCities
+    }
+    
+    // MARK: - Dependencies
+    
     private let repository: StationsRepository
+    
+    // MARK: - Private Properties
     
     private let popularCityTitles: [String] = [
         "Москва",
@@ -17,21 +37,13 @@ final class CityPickerViewModel: ObservableObject {
         "Нижний Новгород"
     ]
     
-    @Published private(set) var cities: [City] = []
-    @Published private(set) var filteredCities: [City] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var errorState: AppErrorState? = nil
-    @Published private(set) var popularCities: [City] = []
-    @Published var query: String = ""
-    
-    var displayedCities: [City] {
-        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines) // убираем пробелы и переносы строк, чтобы строка считалась пустой
-        return trimmedQuery.isEmpty ? popularCities : filteredCities
-    }
+    // MARK: - Initializers
     
     init(repository: StationsRepository) {
         self.repository = repository
     }
+    
+    // MARK: - Public Methods
     
     @MainActor
     func load() async {

@@ -2,8 +2,7 @@ import Foundation
 import Combine
 
 final class StationPickerViewModel: ObservableObject {
-    private let repository: StationsRepository
-    private let city: City
+    // MARK: - States
     
     @Published private(set) var stations: [Station] = []
     @Published private(set) var filteredStations: [Station] = []
@@ -11,20 +10,34 @@ final class StationPickerViewModel: ObservableObject {
     @Published private(set) var errorState: AppErrorState? = nil
     @Published var query: String = ""
     
+    // MARK: - Computed properties
+    
     private var stationsForDisplay: [Station] {
         let allowed: Set<String> = ["station", "platform", "train_station"]
         
         return stations.filter { station in
             let type = station.stationType.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-                  
+            
             return !type.isEmpty && allowed.contains(type)
         }
     }
+    
+    // MARK: - Dependencies
+    
+    private let repository: StationsRepository
+    
+    // MARK: - Private Properties
+    
+    private let city: City
+    
+    // MARK: - Initializers
     
     init(repository: StationsRepository, city: City) {
         self.repository = repository
         self.city = city
     }
+    
+    // MARK: - Public Methods
     
     @MainActor
     func load() async {
