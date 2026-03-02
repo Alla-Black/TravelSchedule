@@ -5,10 +5,9 @@ final class ScheduleScreenViewModel: ObservableObject {
     // MARK: - States
     
     @Published private(set) var schedule: [ScheduleCardItem] = []
-    @Published private(set) var isLoading: Bool = false
-    @Published private(set) var errorState: AppErrorState? = nil
     @Published private(set) var displayedSchedule: [ScheduleCardItem] = []
     @Published private(set) var filters: ScheduleFilters = .default
+    @Published private(set) var state: LoadState = .idle
     
     // MARK: - Computed properties
     
@@ -47,15 +46,15 @@ final class ScheduleScreenViewModel: ObservableObject {
     
     @MainActor
     func load() async {
-        if isLoading { return }
-        if !schedule.isEmpty { return }
+        if case .loading = state { return }
         
-        isLoading = true
-        errorState = nil
-        
-        defer {
-            isLoading = false
+        if !schedule.isEmpty {
+            rebuildDisplayedSchedule()
+            state = .loaded
+            return
         }
+        
+        state = .loading
         
         do {
             schedule = try await repository.fetchSchedule(
@@ -66,24 +65,25 @@ final class ScheduleScreenViewModel: ObservableObject {
             )
             
             rebuildDisplayedSchedule()
+            state = .loaded
             
         } catch {
             if let repoError = error as? RepositoryError {
                 
                 switch repoError {
                 case .noInternet:
-                    errorState = .noInternet
+                    state = .error(.noInternet)
                     displayedSchedule = []
                 case .server:
-                    errorState = .server
+                    state = .error(.server)
                     displayedSchedule = []
                 case .dataNotFound:
                     schedule = []
                     displayedSchedule = []
-                    errorState = nil
+                    state = .loaded
                 }
             } else {
-                errorState = .server
+                state = .error(.server)
                 displayedSchedule = []
             }
         }
@@ -122,7 +122,7 @@ final class ScheduleScreenViewModel: ObservableObject {
         displayedSchedule = result
     }
     
-    //MARK: - Helper
+    // MARK: - Helper
     
     /// Перевод строки в число для сравнения с выбранным диапазоном
     private func departureHour(from timeTitle: String) -> Int? {
