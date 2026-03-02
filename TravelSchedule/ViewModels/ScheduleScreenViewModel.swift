@@ -68,24 +68,15 @@ final class ScheduleScreenViewModel: ObservableObject {
             state = .loaded
             
         } catch {
-            if let repoError = error as? RepositoryError {
-                
-                switch repoError {
-                case .noInternet:
-                    state = .error(.noInternet)
-                    displayedSchedule = []
-                case .server:
-                    state = .error(.server)
-                    displayedSchedule = []
-                case .dataNotFound:
-                    schedule = []
-                    displayedSchedule = []
-                    state = .loaded
-                }
-            } else {
-                state = .error(.server)
+            if let repoError = error as? RepositoryError, repoError == .dataNotFound {
+                schedule = []
                 displayedSchedule = []
+                state = .loaded
+                return
             }
+            
+            displayedSchedule = []
+            state = .error(mapError(error))
         }
     }
     
@@ -120,6 +111,17 @@ final class ScheduleScreenViewModel: ObservableObject {
         }
         
         displayedSchedule = result
+    }
+    
+    private func mapError(_ error: Error) -> AppErrorState {
+        guard let repoError = error as? RepositoryError else { return .server }
+        
+        switch repoError {
+        case .noInternet:
+            return .noInternet
+        case .server, .dataNotFound:
+            return .server
+        }
     }
     
     // MARK: - Helper

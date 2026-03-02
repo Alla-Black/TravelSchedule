@@ -55,19 +55,14 @@ final class StationPickerViewModel: ObservableObject {
             applyFilter()
             state = .loaded
         } catch {
-            if let repoError = error as? RepositoryError {
-                switch repoError {
-                case .noInternet:
-                    state = .error(.noInternet)
-                case .server:
-                    state = .error(.server)
-                case .dataNotFound:
-                    stations = []
-                    filteredStations = []
-                    state = .loaded
-                }
+            if let repoError = error as? RepositoryError,
+               repoError == .dataNotFound {
+                
+                stations = []
+                filteredStations = []
+                state = .loaded
             } else {
-                state = .error(.server)
+                state = .error(mapError(error))
             }
         }
     }
@@ -82,6 +77,21 @@ final class StationPickerViewModel: ObservableObject {
             filteredStations = base.filter {
                 $0.title.localizedCaseInsensitiveContains(trimmedQuery)
             }
+        }
+    }
+    
+    // MARK: - Private Methods
+    
+    private func mapError(_ error: Error) -> AppErrorState {
+        guard let repoError = error as? RepositoryError else {
+            return .server
+        }
+        
+        switch repoError {
+        case .noInternet:
+            return .noInternet
+        case .server, .dataNotFound:
+            return .server
         }
     }
 }

@@ -63,21 +63,7 @@ final class CityPickerViewModel: ObservableObject {
             applyFilter()
             state = .loaded
         } catch {
-            let mappedError: AppErrorState
-            
-            if let repoError = error as? RepositoryError {
-                switch repoError {
-                case .noInternet:
-                    mappedError = .noInternet
-                case .server:
-                    mappedError = .server
-                case .dataNotFound:
-                    mappedError = .server
-                }
-            } else {
-                mappedError = .server
-            }
-            state = .error(mappedError)
+            state = .error(mapError(error))
         }
     }
     
@@ -110,5 +96,18 @@ final class CityPickerViewModel: ObservableObject {
         }
         
         popularCities = resolved.isEmpty ? Array(cities.prefix(10)) : resolved
+    }
+    
+    private func mapError(_ error: Error) -> AppErrorState {
+        guard let repoError = error as? RepositoryError else {
+            return .server
+        }
+        
+        switch repoError {
+        case .noInternet:
+            return .noInternet
+        case .server, .dataNotFound:
+            return .server
+        }
     }
 }
