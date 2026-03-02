@@ -10,41 +10,32 @@ final class StationsReferenceParser {
         var citiesById: [String: City] = [:]
         var stationsByCityId: [String: [Station]] = [:]
         
-        for country in allStationResponse.countries ?? [] {
-            process(
-                country: country,
-                citiesById: &citiesById,
-                stationsByCityId: &stationsByCityId
-            )
+        let countrySettlementPairs: [(Country, Settlement)] = (allStationResponse.countries ?? [])
+            .flatMap { country in
+                (country.regions ?? []).flatMap { region in
+                    (region.settlements ?? []).map { settlement in
+                        (country, settlement)
+                    }
+                }
+            }
+        
+        for (country, settlement) in countrySettlementPairs {
+            let (cityId, city) = makeCity(country: country, settlement: settlement)
+            
+            if citiesById[cityId] == nil {
+                citiesById[cityId] = city
+            }
+            let parsedStations = parseStations(settlement: settlement)
+            guard !parsedStations.isEmpty else { continue }
+            
+            let existing = stationsByCityId[cityId] ?? []
+            stationsByCityId[cityId] = mergeStations(existing: existing, new: parsedStations)
         }
         
         return (citiesById, stationsByCityId)
     }
     
     // MARK: - Helpers
-    
-    private func process(
-        country: Country,
-        citiesById: inout [String: City],
-        stationsByCityId: inout [String: [Station]]
-    ) {
-        for region in country.regions ?? [] {
-            for settlement in region.settlements ?? [] {
-                
-                let (cityId, city) = makeCity(country: country, settlement: settlement)
-                
-                if citiesById[cityId] == nil {
-                    citiesById[cityId] = city
-                }
-                
-                let parsedStations = parseStations(settlement: settlement)
-                guard !parsedStations.isEmpty else { continue }
-                
-                let existing = stationsByCityId[cityId] ?? []
-                stationsByCityId[cityId] = mergeStations(existing: existing, new: parsedStations)
-            }
-        }
-    }
     
     private func makeCity(country: Country, settlement: Settlement) -> (id: String, city: City) {
         let countryTitle = normalize(country.title)
