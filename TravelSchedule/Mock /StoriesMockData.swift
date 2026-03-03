@@ -6,7 +6,7 @@ enum StoriesMockData {
     "Text Text Text Text Text Text Text Text Text Text"
 
     private static let textStub =
-    "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text"
+    "Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text"
 
     static let stories: [Story] = (1...9).map { storyIndex in
         let pages: [StoryPage] = (1...2).map { pageIndex in
