@@ -23,6 +23,8 @@
 		4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A972F339CAD00F8920D /* CarrierInfoService.swift */; };
 		4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148AAA2F33C3C000F8920D /* AllStationsService.swift */; };
 		4D8A922A2F55E83D00D0B843 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A92292F55E83D00D0B843 /* LoadState.swift */; };
+		4D8A92352F570C6100D0B843 /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A92342F570C6100D0B843 /* StoryPage.swift */; };
+		4D8A92382F570CDA00D0B843 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A92372F570CDA00D0B843 /* Story.swift */; };
 		4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */; };
 		4D9D28072F4DDBC90045E117 /* ScheduleFiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */; };
 		4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */; };
@@ -83,6 +85,8 @@
 		4D148A972F339CAD00F8920D /* CarrierInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoService.swift; sourceTree = "<group>"; };
 		4D148AAA2F33C3C000F8920D /* AllStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStationsService.swift; sourceTree = "<group>"; };
 		4D8A92292F55E83D00D0B843 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		4D8A92342F570C6100D0B843 /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
+		4D8A92372F570CDA00D0B843 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFilters.swift; sourceTree = "<group>"; };
 		4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersViewModel.swift; sourceTree = "<group>"; };
 		4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFiltersScreen.swift; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				4DD9BAC52F433F6C0020B81E /* Selection.swift */,
 				4DD9BC2A2F4A05B80020B81E /* ScheduleCardItem.swift */,
 				4D9D28022F4DD88F0045E117 /* ScheduleFilters.swift */,
+				4D8A92342F570C6100D0B843 /* StoryPage.swift */,
+				4D8A92372F570CDA00D0B843 /* Story.swift */,
 			);
 			path = "Domain Models";
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
 				4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
+				4D8A92352F570C6100D0B843 /* StoryPage.swift in Sources */,
 				4D9D28102F4E1B840045E117 /* ScheduleFiltersModel.swift in Sources */,
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
 				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
@@ -468,6 +475,7 @@
 				4DD9BAC62F433F6C0020B81E /* Selection.swift in Sources */,
 				4DD9BC362F4B59DB0020B81E /* DefaultScheduleRepository.swift in Sources */,
 				4D148A902F33944F00F8920D /* NearestCityService.swift in Sources */,
+				4D8A92382F570CDA00D0B843 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
