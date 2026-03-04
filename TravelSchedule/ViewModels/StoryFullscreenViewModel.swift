@@ -28,7 +28,7 @@ final class StoryFullscreenViewModel: ObservableObject {
     // MARK: - Public Properties
     
     let stories: [Story]
-    let onClose: (() -> Void)?
+    var onClose: (() -> Void)?
     
     // MARK: - Private Properties
     

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct StoryFullscreenView: View {
     @StateObject private var viewModel: StoryFullscreenViewModel
+    @Environment(\.dismiss) private var dismiss
     
     init(stories: [Story], startIndex: Int) {
         self._viewModel = StateObject(
@@ -54,6 +55,7 @@ struct StoryFullscreenView: View {
             .padding(.top, 7)
             .padding(.bottom, 17)
             .onAppear {
+                viewModel.onClose = { dismiss() }
                 viewModel.startTimer()
             }
             .onDisappear {
