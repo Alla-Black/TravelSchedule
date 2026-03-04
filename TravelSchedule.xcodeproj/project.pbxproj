@@ -10,6 +10,7 @@
 		4D1404F92F578E7600216422 /* StoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1404F82F578E7600216422 /* StoryPageView.swift */; };
 		4D1404FF2F579F7700216422 /* StoryFullscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1404FE2F579F7700216422 /* StoryFullscreenView.swift */; };
 		4D14051A2F582E4700216422 /* StoriesProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1405192F582E4700216422 /* StoriesProgressView.swift */; };
+		4D14058D2F58443B00216422 /* StoryFullscreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14058C2F58443B00216422 /* StoryFullscreenViewModel.swift */; };
 		4D148A1E2F30EC2E00F8920D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D148A1A2F30EC2E00F8920D /* Assets.xcassets */; };
 		4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A1B2F30EC2E00F8920D /* ContentView.swift */; };
 		4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A1C2F30EC2E00F8920D /* TravelScheduleApp.swift */; };
@@ -77,6 +78,7 @@
 		4D1404F82F578E7600216422 /* StoryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageView.swift; sourceTree = "<group>"; };
 		4D1404FE2F579F7700216422 /* StoryFullscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFullscreenView.swift; sourceTree = "<group>"; };
 		4D1405192F582E4700216422 /* StoriesProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesProgressView.swift; sourceTree = "<group>"; };
+		4D14058C2F58443B00216422 /* StoryFullscreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryFullscreenViewModel.swift; sourceTree = "<group>"; };
 		4D148A042F2BF12B00F8920D /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D148A1A2F30EC2E00F8920D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D148A1B2F30EC2E00F8920D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */,
 				4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */,
 				4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */,
+				4D14058C2F58443B00216422 /* StoryFullscreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
 				4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */,
 				4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */,
+				4D14058D2F58443B00216422 /* StoryFullscreenViewModel.swift in Sources */,
 				4DD9BABE2F433EE10020B81E /* Station.swift in Sources */,
 				4D8A92402F5726AC00D0B843 /* StoriesMockData.swift in Sources */,
 				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
