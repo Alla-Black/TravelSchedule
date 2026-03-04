@@ -30,6 +30,19 @@ final class StoryFullscreenViewModel: ObservableObject {
         self.onClose = onClose
     }
     
+    // MARK: - Public Methods
+    
+    func setCurrentPageIndex(_ newIndex: Int) {
+        guard pagesCount > 0 else { return }
+        
+        let clampedIndex = min(max(newIndex, 0), pagesCount - 1)
+        
+        guard clampedIndex != currentPageIndex else { return }
+        
+        currentPageIndex = clampedIndex
+        pageProgress = 0
+    }
+    
     func goNextPage() {
         guard pagesCount > 0 else {
             onClose?()

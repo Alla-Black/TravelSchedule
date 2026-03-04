@@ -12,26 +12,31 @@ struct StoryFullscreenView: View {
             Color.blackUniversal.ignoresSafeArea()
             
             ZStack() {
-                let page = viewModel.pages[viewModel.currentPageIndex]
-                StoryPageView(page: page)
-                
-                    .overlay(alignment: .topTrailing) {
-                        Button {
-                            viewModel.onClose?()
-                        } label: {
-                            Image(.close)
-                                .frame(width: 30, height: 30)
-                        }
-                        .padding(.top, 50)
-                        .padding(.trailing, 12)
+                StoryPagesTabView(
+                    pages: viewModel.pages,
+                    currentPageIndex: viewModel.currentPageIndex,
+                    onPageChange: { newIndex in
+                        viewModel.setCurrentPageIndex(newIndex)
                     }
+                )
                 
-                    .overlay(alignment: .top) {
-                        StoriesProgressView(numberOfSections: viewModel.pagesCount, progress: viewModel.totalProgress)
-                            .padding(.horizontal, 12)
-                            .padding(.bottom, 12)
-                            .padding(.top, 28)
+                .overlay(alignment: .topTrailing) {
+                    Button {
+                        viewModel.onClose?()
+                    } label: {
+                        Image(.close)
+                            .frame(width: 30, height: 30)
                     }
+                    .padding(.top, 50)
+                    .padding(.trailing, 12)
+                }
+                
+                .overlay(alignment: .top) {
+                    StoriesProgressView(numberOfSections: viewModel.pagesCount, progress: viewModel.totalProgress)
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 12)
+                        .padding(.top, 28)
+                }
             }
             .padding(.top, 7)
             .padding(.bottom, 17)
