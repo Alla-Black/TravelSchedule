@@ -26,8 +26,15 @@ final class StoryFullscreenViewModel: ObservableObject {
     }
     
     // MARK: - Public Properties
+    
     let stories: [Story]
     let onClose: (() -> Void)?
+    
+    // MARK: - Private Properties
+    
+    private let pageDuration: Double = 10
+    private let timerInterval: Double = 0.05
+    private var cancellable: AnyCancellable? // переменная, где хранится подписка таймера, чтобы таймер не удалился и мы могли его остановить
     
     // MARK: - Init
     
@@ -83,6 +90,31 @@ final class StoryFullscreenViewModel: ObservableObject {
             currentStoryIndex -= 1
             currentPageIndex = max((stories[currentStoryIndex].pages.count) - 1, 0)
             pageProgress = 0
+        }
+    }
+    
+    // MARK: - Story Timer
+    
+    func startTimer() {
+        cancellable = Timer
+            .publish(every: timerInterval, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                self?.timerTick()
+            }
+    }
+    
+    func stopTimer() {
+        cancellable?.cancel()
+        cancellable = nil
+    }
+    
+    private func timerTick() {
+        pageProgress += CGFloat(timerInterval / pageDuration)
+        
+        if pageProgress >= 1 {
+            pageProgress = 0
+            goNextPage()
         }
     }
 }
