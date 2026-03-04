@@ -11,18 +11,19 @@ struct StoriesProgressView: View {
     
     var body: some View {
         GeometryReader { geometry in
+            let sections = max(numberOfSections, 1) // защита от 0
+            let clamped = min(max(progress, 0), CGFloat(sections)) // 0...sections
+            // min(..., fullWidth) защищает от ситуации, когда progress > 1 (чтобы не вылезло)
+            let fraction = clamped / CGFloat(sections) // 0...1
+            let filledWidth = fraction * geometry.size.width
+            
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: .progressBarCornerRadius)
                     .frame(width: geometry.size.width, height: .progressBarHeight)
                     .foregroundColor(.whiteUniversal)
                 
                 RoundedRectangle(cornerRadius: .progressBarCornerRadius)
-                    .frame(width: min( // min(..., fullWidth) защищает от ситуации, когда progress > 1 (чтобы не вылезло)
-                        progress * geometry.size.width,
-                        geometry.size.width
-                    ),
-                           height: .progressBarHeight
-                    )
+                    .frame(width: filledWidth, height: .progressBarHeight)
                     .foregroundColor(.blueUniversal)
             }
             .mask {
