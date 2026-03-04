@@ -1,20 +1,23 @@
 import SwiftUI
 
 struct StoryFullscreenView: View {
-    let story: Story
-    let progressStub: CGFloat = 0.3
+    @StateObject private var viewModel: StoryFullscreenViewModel
+    
+    init(story: Story) {
+        self._viewModel = StateObject(wrappedValue: StoryFullscreenViewModel(story: story))
+    }
     
     var body: some View {
         ZStack {
             Color.blackUniversal.ignoresSafeArea()
             
             ZStack() {
-                let page = story.pages[0]
+                let page = viewModel.pages[viewModel.currentPageIndex]
                 StoryPageView(page: page)
                 
                     .overlay(alignment: .topTrailing) {
                         Button {
-                            
+                            viewModel.onClose?()
                         } label: {
                             Image(.close)
                                 .frame(width: 30, height: 30)
@@ -24,7 +27,7 @@ struct StoryFullscreenView: View {
                     }
                 
                     .overlay(alignment: .top) {
-                        StoriesProgressView(numberOfSections: story.pages.count, progress: progressStub)
+                        StoriesProgressView(numberOfSections: viewModel.pagesCount, progress: viewModel.totalProgress)
                             .padding(.horizontal, 12)
                             .padding(.bottom, 12)
                             .padding(.top, 28)
