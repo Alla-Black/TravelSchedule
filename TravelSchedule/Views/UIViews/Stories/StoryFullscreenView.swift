@@ -12,13 +12,24 @@ struct StoryFullscreenView: View {
             Color.blackUniversal.ignoresSafeArea()
             
             ZStack() {
-                StoryPagesTabView(
-                    pages: viewModel.pages,
-                    currentPageIndex: viewModel.currentPageIndex,
-                    onPageChange: { newIndex in
-                        viewModel.setCurrentPageIndex(newIndex)
-                    }
-                )
+                GeometryReader { geo in
+                    StoryPagesTabView(
+                        pages: viewModel.pages,
+                        currentPageIndex: viewModel.currentPageIndex,
+                        onPageChange: { newIndex in
+                            viewModel.setCurrentPageIndex(newIndex)
+                        }
+                    )
+                    .simultaneousGesture( // позволяет совместить тап и свайп
+                        SpatialTapGesture().onEnded { value in
+                            if value.location.x < geo.size.width / 2 {
+                                viewModel.goPrevPage()
+                            } else {
+                                viewModel.goNextPage()
+                            }
+                        }
+                    )
+                }
                 
                 .overlay(alignment: .topTrailing) {
                     Button {
