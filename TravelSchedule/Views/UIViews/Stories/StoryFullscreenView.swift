@@ -3,8 +3,10 @@ import SwiftUI
 struct StoryFullscreenView: View {
     @StateObject private var viewModel: StoryFullscreenViewModel
     
-    init(story: Story) {
-        self._viewModel = StateObject(wrappedValue: StoryFullscreenViewModel(story: story))
+    init(stories: [Story], startIndex: Int) {
+        self._viewModel = StateObject(
+            wrappedValue: StoryFullscreenViewModel(stories: stories, startIndex: startIndex)
+        )
     }
     
     var body: some View {
@@ -56,6 +58,5 @@ struct StoryFullscreenView: View {
 }
 
 #Preview {
-    let story = StoriesMockData.stories[0]
-    StoryFullscreenView(story: story)
+    StoryFullscreenView(stories: StoriesMockData.stories, startIndex: 0)
 }
