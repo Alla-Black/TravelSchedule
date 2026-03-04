@@ -5,12 +5,18 @@ final class StoryFullscreenViewModel: ObservableObject {
     // MARK: - States
     
     @Published private(set) var currentPageIndex: Int = 0
+    @Published private(set) var currentStoryIndex: Int
     @Published private(set) var pageProgress: CGFloat = 0
     
     // MARK: - Computed properties
     
+    var currentStory: Story? {
+        guard stories.indices.contains(currentStoryIndex) else { return nil }
+        return stories[currentStoryIndex]
+    }
+    
     var pages: [StoryPage] {
-        story.pages
+        currentStory?.pages ?? []
     }
     var pagesCount: Int {
         pages.count
@@ -20,13 +26,14 @@ final class StoryFullscreenViewModel: ObservableObject {
     }
     
     // MARK: - Public Properties
-    let story: Story
+    let stories: [Story]
     let onClose: (() -> Void)?
     
-    // MARK: - Initializers
+    // MARK: - Init
     
-    init(story: Story, onClose: (() -> Void)? = nil) {
-        self.story = story
+    init(stories: [Story], startIndex: Int, onClose: (() -> Void)? = nil) {
+        self.stories = stories
+        self.currentStoryIndex = startIndex
         self.onClose = onClose
     }
     
@@ -35,33 +42,46 @@ final class StoryFullscreenViewModel: ObservableObject {
     func setCurrentPageIndex(_ newIndex: Int) {
         guard pagesCount > 0 else { return }
         
-        let clampedIndex = min(max(newIndex, 0), pagesCount - 1)
+        let clamped = min(max(newIndex, 0), pagesCount - 1)
         
-        guard clampedIndex != currentPageIndex else { return }
+        guard clamped != currentPageIndex else { return }
         
-        currentPageIndex = clampedIndex
+        currentPageIndex = clamped
         pageProgress = 0
     }
     
     func goNextPage() {
-        guard pagesCount > 0 else {
-            onClose?()
-            return
-        }
-        
+        // следующая страница в текущей сториз
         if currentPageIndex < pagesCount - 1 {
             currentPageIndex += 1
             pageProgress = 0
-        } else {
-            onClose?()
+            return
         }
+        
+        // следующая сториз
+        if currentStoryIndex < stories.count - 1 {
+            currentStoryIndex += 1
+            currentPageIndex = 0
+            pageProgress = 0
+            return
+        }
+        
+        // просмотр последней сторис завершён — закрываем экран
+        onClose?()
     }
     
     func goPrevPage() {
-        guard pagesCount > 0 else { return }
-        
+        // предыдущая страница в текущей истории
         if currentPageIndex > 0 {
             currentPageIndex -= 1
+            pageProgress = 0
+            return
+        }
+        
+        // предыдущая история (переход на ее последнюю страницу)
+        if currentStoryIndex > 0 {
+            currentStoryIndex -= 1
+            currentPageIndex = max((stories[currentStoryIndex].pages.count) - 1, 0)
             pageProgress = 0
         }
     }
