@@ -53,6 +53,12 @@ struct StoryFullscreenView: View {
             }
             .padding(.top, 7)
             .padding(.bottom, 17)
+            .onAppear {
+                viewModel.startTimer()
+            }
+            .onDisappear {
+                viewModel.stopTimer()
+            }
         }
     }
 }
