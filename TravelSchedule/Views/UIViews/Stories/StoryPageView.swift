@@ -26,8 +26,6 @@ struct StoryPageView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 40)
         }
-        .padding(.top, 7)
-        .padding(.bottom, 17)
     }
 }
 
