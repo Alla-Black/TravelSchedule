@@ -4,20 +4,28 @@ struct MainScreen: View {
     @EnvironmentObject private var routeModel: RouteSelectionModel
     @EnvironmentObject private var navigationModel: NavigationModel
     
+    @State private var seenStoryIDs: Set<UUID> = []
+    @State private var isShowingStories = false
+    @State private var selectedStoryIndex = 0
+    
     var body: some View {
-        ZStack {
+        ZStack() {
             Color.whiteDayNight
                 .ignoresSafeArea()
             
-            VStack(spacing: 20) {
-                
-                StoriesCarouselView()
-                    .frame(height: 188)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.whiteUniversal)
-                    .border(Color.blueUniversal)
-                    .clipped()
-                    .padding(.horizontal, 16)
+            VStack(spacing: 0) {
+                StoriesCarouselView(
+                    stories: StoriesMockData.stories,
+                    onTap: { index in
+                        selectedStoryIndex = index
+                        let id = StoriesMockData.stories[index].id
+                        seenStoryIDs.insert(id)
+                    },
+                    seenStoryIDs: seenStoryIDs
+                )
+                .padding(.leading, 16)
+                .padding(.vertical, 24)
+                .padding(.bottom, 20)
                 
                 VStack(spacing: 16) {
                     RouteInputCardView()
@@ -41,4 +49,9 @@ struct MainScreen: View {
             }
         }
     }
+}
+
+#Preview { MainScreen()
+        .environmentObject(RouteSelectionModel())
+        .environmentObject(NavigationModel())
 }
