@@ -61,6 +61,9 @@ struct StoryFullscreenView: View {
             .onDisappear {
                 viewModel.stopTimer()
             }
+            .swipeDownToDismiss {
+                viewModel.onClose?()
+            }
         }
     }
 }
