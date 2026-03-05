@@ -27,7 +27,7 @@ struct StoriesProgressView: View {
                     .foregroundColor(.blueUniversal)
             }
             .mask {
-                MaskView(numberOfSections: numberOfSections)
+                MaskView(numberOfSections: sections)
             }
         }
     }
@@ -40,15 +40,16 @@ private struct MaskView: View {
         HStack(spacing: 6) {
             ForEach(0..<numberOfSections, id: \.self) { _ in
                 MaskFragmentView()
+                    .frame(maxWidth: .infinity)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 private struct MaskFragmentView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: .progressBarCornerRadius)
-            .fixedSize(horizontal: false, vertical: true)
             .frame(height: .progressBarHeight)
             .foregroundStyle(.whiteUniversal)
     }
