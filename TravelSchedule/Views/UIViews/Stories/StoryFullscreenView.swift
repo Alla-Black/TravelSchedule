@@ -4,7 +4,12 @@ struct StoryFullscreenView: View {
     @StateObject private var viewModel: StoryFullscreenViewModel
     @Environment(\.dismiss) private var dismiss
     
-    init(stories: [Story], startIndex: Int) {
+    private let stories: [Story]
+    private let onStorySeen: (UUID) -> Void
+    
+    init(stories: [Story], startIndex: Int, onStorySeen: @escaping (UUID) -> Void) {
+        self.stories = stories
+        self.onStorySeen = onStorySeen
         self._viewModel = StateObject(
             wrappedValue: StoryFullscreenViewModel(stories: stories, startIndex: startIndex)
         )
@@ -57,9 +62,19 @@ struct StoryFullscreenView: View {
             .onAppear {
                 viewModel.onClose = { dismiss() }
                 viewModel.startTimer()
+                
+                if !stories.isEmpty {
+                    let id = stories[viewModel.currentStoryIndex].id
+                    onStorySeen(id)
+                }
             }
             .onDisappear {
                 viewModel.stopTimer()
+            }
+            .onChange(of: viewModel.currentStoryIndex) {
+                let index = viewModel.currentStoryIndex
+                guard stories.indices.contains(index) else { return }
+                onStorySeen(stories[index].id)
             }
             .swipeDownToDismiss {
                 viewModel.onClose?()
@@ -69,5 +84,9 @@ struct StoryFullscreenView: View {
 }
 
 #Preview {
-    StoryFullscreenView(stories: StoriesMockData.stories, startIndex: 0)
+    StoryFullscreenView(
+        stories: StoriesMockData.stories,
+        startIndex: 0,
+        onStorySeen: { _ in }
+    )
 }

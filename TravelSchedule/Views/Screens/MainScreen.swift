@@ -53,7 +53,10 @@ struct MainScreen: View {
         .fullScreenCover(isPresented: $isShowingStories) {
             StoryFullscreenView(
                 stories: StoriesMockData.stories,
-                startIndex: selectedStoryIndex
+                startIndex: selectedStoryIndex,
+                onStorySeen: { id in
+                    seenStoryIDs.insert(id)
+                }
             )
         }
     }
