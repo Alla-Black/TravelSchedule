@@ -45,6 +45,7 @@
 		4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */; };
 		4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */; };
 		4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0922F3E751E006FD2EC /* SwapButton.swift */; };
+		4DC2D9AC2F59DA06009D14BC /* SwipeDownToDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */; };
 		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
 		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
 		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
@@ -114,6 +115,7 @@
 		4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputCardView.swift; sourceTree = "<group>"; };
 		4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFieldsView.swift; sourceTree = "<group>"; };
 		4D9FD0922F3E751E006FD2EC /* SwapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
+		4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDownToDismissModifier.swift; sourceTree = "<group>"; };
 		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		4D9FD07F2F3E65BB006FD2EC /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				4DC2D9AB2F59DA06009D14BC /* Modifiers */,
 				4D1404F52F578DAB00216422 /* Stories */,
 				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
 				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
@@ -303,6 +306,14 @@
 				4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */,
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		4DC2D9AB2F59DA06009D14BC /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		4DD9BAB92F433ECD0020B81E /* Domain Models */ = {
@@ -509,6 +520,7 @@
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
 				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
 				4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */,
+				4DC2D9AC2F59DA06009D14BC /* SwipeDownToDismissModifier.swift in Sources */,
 				4D1404FF2F579F7700216422 /* StoryFullscreenView.swift in Sources */,
 				4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */,
 				4DD9BB4F2F44FC450020B81E /* SearchBarView.swift in Sources */,

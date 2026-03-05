@@ -20,6 +20,8 @@ struct MainScreen: View {
                         selectedStoryIndex = index
                         let id = StoriesMockData.stories[index].id
                         seenStoryIDs.insert(id)
+                        
+                        isShowingStories = true
                     },
                     seenStoryIDs: seenStoryIDs
                 )
@@ -47,6 +49,12 @@ struct MainScreen: View {
                 }
                 Spacer()
             }
+        }
+        .fullScreenCover(isPresented: $isShowingStories) {
+            StoryFullscreenView(
+                stories: StoriesMockData.stories,
+                startIndex: selectedStoryIndex
+            )
         }
     }
 }
