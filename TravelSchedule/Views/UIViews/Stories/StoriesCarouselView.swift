@@ -20,6 +20,7 @@ struct StoriesCarouselView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             .opacity(isSeen ? 0.5 : 1.0)
                         
+                        
                         Text(previewPage?.title ?? "")
                             .font(.system(size: 12, weight: .regular))
                             .foregroundStyle(.whiteUniversal)
@@ -32,7 +33,7 @@ struct StoriesCarouselView: View {
                         onTap(index)
                     }
                     .overlay {
-                        RoundedRectangle(cornerRadius: 16)
+                        RoundedRectangle(cornerRadius: 16).inset(by: 2)
                             .stroke(isSeen ? Color.clear : .blueUniversal, lineWidth: 4)
                     }
                 }
