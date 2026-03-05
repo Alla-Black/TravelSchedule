@@ -164,6 +164,7 @@
 				4D1404FE2F579F7700216422 /* StoryFullscreenView.swift */,
 				4D1405192F582E4700216422 /* StoriesProgressView.swift */,
 				4D1405A12F58735D00216422 /* StoryPagesTabView.swift */,
+				4D9FD0832F3E73AE006FD2EC /* StoriesCarouselView.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -291,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				4D1404F52F578DAB00216422 /* Stories */,
-				4D9FD0832F3E73AE006FD2EC /* StoriesCarouselView.swift */,
 				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
 				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
 				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,

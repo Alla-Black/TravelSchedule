@@ -18,9 +18,12 @@ enum StoriesMockData {
             )
         }
 
+        let previewImageName = "story_\(storyIndex)_preview"
+        
         return Story(
             id: UUID(),
-            pages: pages
+            pages: pages,
+            previewImageName: previewImageName
         )
     }
 }
