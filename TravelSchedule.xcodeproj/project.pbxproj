@@ -79,6 +79,7 @@
 		4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */; };
 		4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */; };
 		4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */; };
+		4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +155,7 @@
 		4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenViewModel.swift; sourceTree = "<group>"; };
 		4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
 		4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLogoView.swift; sourceTree = "<group>"; };
+		4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +397,7 @@
 				4D9D28062F4DDBC90045E117 /* ScheduleFiltersViewModel.swift */,
 				4D9D280F2F4E1B840045E117 /* ScheduleFiltersModel.swift */,
 				4D14058C2F58443B00216422 /* StoryFullscreenViewModel.swift */,
+				4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
 				4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */,
 				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
+				4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
 				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
