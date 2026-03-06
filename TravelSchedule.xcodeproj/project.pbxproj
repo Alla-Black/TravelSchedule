@@ -46,6 +46,7 @@
 		4D9FD08D2F3E7507006FD2EC /* RouteFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */; };
 		4D9FD0932F3E751E006FD2EC /* SwapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9FD0922F3E751E006FD2EC /* SwapButton.swift */; };
 		4DC2D9AC2F59DA06009D14BC /* SwipeDownToDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */; };
+		4DC2DA6D2F5AFBA8009D14BC /* UserAgreementScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */; };
 		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
 		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
 		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
@@ -116,6 +117,7 @@
 		4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteFieldsView.swift; sourceTree = "<group>"; };
 		4D9FD0922F3E751E006FD2EC /* SwapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapButton.swift; sourceTree = "<group>"; };
 		4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDownToDismissModifier.swift; sourceTree = "<group>"; };
+		4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementScreen.swift; sourceTree = "<group>"; };
 		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -190,9 +192,8 @@
 		4D148A1D2F30EC2E00F8920D /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				4D8A923D2F57268F00D0B843 /* Mock  */,
-				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D9FCFB92F3E0F09006FD2EC /* App */,
+				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D148A502F313F8A00F8920D /* Views */,
 				4DD9BB422F449C770020B81E /* ViewModels */,
 				4DD9BAD02F434DF30020B81E /* Data */,
@@ -223,6 +224,7 @@
 				4D148A8F2F33944F00F8920D /* NearestCityService.swift */,
 				4D148A972F339CAD00F8920D /* CarrierInfoService.swift */,
 				4D148AAA2F33C3C000F8920D /* AllStationsService.swift */,
+				4D148A1B2F30EC2E00F8920D /* ContentView.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -233,7 +235,6 @@
 				4D9FD0732F3E658E006FD2EC /* Screens */,
 				4D9FD07F2F3E65BB006FD2EC /* UIViews */,
 				4DD9BAF82F4395B90020B81E /* States */,
-				4D148A1B2F30EC2E00F8920D /* ContentView.swift */,
 				4D9FD0622F3E63F7006FD2EC /* Navigation */,
 			);
 			path = Views;
@@ -250,6 +251,7 @@
 		4D9FCFAC2F3E0EC3006FD2EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D8A923D2F57268F00D0B843 /* Mock  */,
 				4D148A1A2F30EC2E00F8920D /* Assets.xcassets */,
 				4D9FD0322F3E4B00006FD2EC /* Info.plist */,
 			);
@@ -285,6 +287,7 @@
 				4DD9BC0B2F47323C0020B81E /* StationPickerScreen.swift */,
 				4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */,
 				4D9D28092F4DE2B70045E117 /* ScheduleFiltersScreen.swift */,
+				4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */,
 				4D9D281A2F4E32080045E117 /* CarrierInfoScreen.swift */,
 			);
 			path = Screens;
@@ -501,6 +504,7 @@
 				4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */,
 				4D9D280A2F4DE2B70045E117 /* ScheduleFiltersScreen.swift in Sources */,
 				4D9FD0872F3E73DC006FD2EC /* RouteInputCardView.swift in Sources */,
+				4DC2DA6D2F5AFBA8009D14BC /* UserAgreementScreen.swift in Sources */,
 				4D8A92352F570C6100D0B843 /* StoryPage.swift in Sources */,
 				4D9D28102F4E1B840045E117 /* ScheduleFiltersModel.swift in Sources */,
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
