@@ -100,8 +100,8 @@ struct TabBarView: View {
         case .scheduleFilters:
             ScheduleFiltersScreen()
             
-        case .carrierInfo:
-            CarrierInfoScreen()
+        case .carrierInfo(let code):
+            CarrierInfoScreen(code: code)
         }
     }
     

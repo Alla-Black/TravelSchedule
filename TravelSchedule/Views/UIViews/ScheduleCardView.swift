@@ -9,7 +9,8 @@ struct ScheduleCardView: View {
                 HStack(spacing: 0) {
                     RemoteLogoView(
                         url: item.carrierLogoURL,
-                        size: 38,
+                        width: 38,
+                        height: 38,
                         cornerRadius: 12
                     )
                     .padding(.trailing, 8)
@@ -82,7 +83,8 @@ struct ScheduleCardView: View {
             departureTimeTitle: "22:30",
             arrivalTimeTitle: "08:15",
             durationTitle: "20 часов",
-            hasTransfers: true
+            hasTransfers: true,
+            carrierCode: "680"
         )
     )
 }
@@ -98,7 +100,8 @@ struct ScheduleCardView: View {
             departureTimeTitle: "22:30",
             arrivalTimeTitle: "08:15",
             durationTitle: "20 часов",
-            hasTransfers: false
+            hasTransfers: false,
+            carrierCode: "680"
         )
     )
 }

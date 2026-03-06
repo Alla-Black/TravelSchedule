@@ -2,8 +2,9 @@ import SwiftUI
 
 struct RemoteLogoView: View {
     let url: URL?
-    var size: CGFloat = 38
-    var cornerRadius: CGFloat = 12
+    let width: CGFloat
+    let height: CGFloat
+    var cornerRadius: CGFloat
     
     var body: some View {
         Group {
@@ -24,7 +25,7 @@ struct RemoteLogoView: View {
                 placeholder
             }
         }
-        .frame(width: size, height: size)
+        .frame(width: width, height: height)
         .clipped()
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
@@ -39,7 +40,8 @@ struct RemoteLogoView: View {
 #Preview {
     RemoteLogoView(
         url: URL(string: "https://img.freepik.com/premium-vector/train-logo-brand_1294175-5790.jpg?semt=ais_hybrid&w=740"),
-        size: 38,
+        width: 38,
+        height: 38,
         cornerRadius: 12
     )
 }
@@ -47,7 +49,8 @@ struct RemoteLogoView: View {
 #Preview {
     RemoteLogoView(
         url: URL(string: ""),
-        size: 38,
+        width: 38,
+        height: 38,
         cornerRadius: 12
     )
 }

@@ -80,6 +80,7 @@
 		4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */; };
 		4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */; };
 		4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */; };
+		4DF293122F5B8704002459B4 /* CarrierInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293112F5B8704002459B4 /* CarrierInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
 		4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLogoView.swift; sourceTree = "<group>"; };
 		4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoViewModel.swift; sourceTree = "<group>"; };
+		4DF293112F5B8704002459B4 /* CarrierInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		4D9FD07F2F3E65BB006FD2EC /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				4DF2930E2F5B86ED002459B4 /* CarrierInfo */,
 				4DC2D9AB2F59DA06009D14BC /* Modifiers */,
 				4D1404F52F578DAB00216422 /* Stories */,
 				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
@@ -400,6 +403,14 @@
 				4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4DF2930E2F5B86ED002459B4 /* CarrierInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4DF293112F5B8704002459B4 /* CarrierInfoView.swift */,
+			);
+			path = CarrierInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +540,7 @@
 				4DD9BC332F4B56940020B81E /* ScheduleRepository.swift in Sources */,
 				4DD9BC0C2F47323C0020B81E /* StationPickerScreen.swift in Sources */,
 				4D1405A22F58735D00216422 /* StoryPagesTabView.swift in Sources */,
+				4DF293122F5B8704002459B4 /* CarrierInfoView.swift in Sources */,
 				4DD9BC0F2F475A030020B81E /* Screen.swift in Sources */,
 				4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */,
 				4D148A982F339CAD00F8920D /* CarrierInfoService.swift in Sources */,
