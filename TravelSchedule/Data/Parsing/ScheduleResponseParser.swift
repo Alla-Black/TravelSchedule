@@ -33,6 +33,10 @@ struct ScheduleResponseParser {
         
         let carrierTitle = segment.thread?.carrier?.title ?? Constants.unknownCarrier
         let carrierLogoURL = makeLogoURL(from: segment.thread?.carrier?.logo)
+        guard let carrierCodeInt = segment.thread?.carrier?.code else {
+            return nil
+        }
+        let carrierCode = String(carrierCodeInt)
         
         let dateTitle = formatDate(from: departureRaw)
         let departureTimeTitle = formatTime(from: departureRaw)
@@ -56,7 +60,8 @@ struct ScheduleResponseParser {
             departureTimeTitle: departureTimeTitle,
             arrivalTimeTitle: arrivalTimeTitle,
             durationTitle: durationTitle,
-            hasTransfers: hasTransfers
+            hasTransfers: hasTransfers,
+            carrierCode: carrierCode
         )
     }
     
