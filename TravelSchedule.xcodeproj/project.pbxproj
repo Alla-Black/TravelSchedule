@@ -48,6 +48,7 @@
 		4DC2D9AC2F59DA06009D14BC /* SwipeDownToDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */; };
 		4DC2DA6D2F5AFBA8009D14BC /* UserAgreementScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */; };
 		4DC2DACE2F5B5C2A009D14BC /* CarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DACD2F5B5C2A009D14BC /* CarrierInfo.swift */; };
+		4DC2DAD12F5B6B05009D14BC /* CarrierInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DAD02F5B6B05009D14BC /* CarrierInfoParser.swift */; };
 		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
 		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
 		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
@@ -120,6 +121,7 @@
 		4DC2D9AA2F59DA06009D14BC /* SwipeDownToDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDownToDismissModifier.swift; sourceTree = "<group>"; };
 		4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementScreen.swift; sourceTree = "<group>"; };
 		4DC2DACD2F5B5C2A009D14BC /* CarrierInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfo.swift; sourceTree = "<group>"; };
+		4DC2DAD02F5B6B05009D14BC /* CarrierInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoParser.swift; sourceTree = "<group>"; };
 		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				4DD9BAE52F435DCE0020B81E /* StationsReferenceParser.swift */,
 				4DD9BC2D2F4A07820020B81E /* ScheduleResponseParser.swift */,
+				4DC2DAD02F5B6B05009D14BC /* CarrierInfoParser.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				4D14051A2F582E4700216422 /* StoriesProgressView.swift in Sources */,
 				4DD9BABA2F433ECD0020B81E /* City.swift in Sources */,
 				4DD9BC082F4717510020B81E /* StationPickerViewModel.swift in Sources */,
+				4DC2DAD12F5B6B05009D14BC /* CarrierInfoParser.swift in Sources */,
 				4D8A922A2F55E83D00D0B843 /* LoadState.swift in Sources */,
 				4D9FD0842F3E73AE006FD2EC /* StoriesCarouselView.swift in Sources */,
 				4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */,
