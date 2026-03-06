@@ -49,6 +49,8 @@
 		4DC2DA6D2F5AFBA8009D14BC /* UserAgreementScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */; };
 		4DC2DACE2F5B5C2A009D14BC /* CarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DACD2F5B5C2A009D14BC /* CarrierInfo.swift */; };
 		4DC2DAD12F5B6B05009D14BC /* CarrierInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DAD02F5B6B05009D14BC /* CarrierInfoParser.swift */; };
+		4DC2DAD42F5B75BA009D14BC /* CarrierInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DAD32F5B75BA009D14BC /* CarrierInfoRepository.swift */; };
+		4DC2DAD62F5B76B6009D14BC /* DefaultCarrierInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2DAD52F5B76B6009D14BC /* DefaultCarrierInfoRepository.swift */; };
 		4DD9BABA2F433ECD0020B81E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAB82F433ECD0020B81E /* City.swift */; };
 		4DD9BABE2F433EE10020B81E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BABD2F433EE10020B81E /* Station.swift */; };
 		4DD9BAC22F433F050020B81E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAC12F433F050020B81E /* Direction.swift */; };
@@ -122,6 +124,8 @@
 		4DC2DA6C2F5AFBA8009D14BC /* UserAgreementScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementScreen.swift; sourceTree = "<group>"; };
 		4DC2DACD2F5B5C2A009D14BC /* CarrierInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfo.swift; sourceTree = "<group>"; };
 		4DC2DAD02F5B6B05009D14BC /* CarrierInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoParser.swift; sourceTree = "<group>"; };
+		4DC2DAD32F5B75BA009D14BC /* CarrierInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoRepository.swift; sourceTree = "<group>"; };
+		4DC2DAD52F5B76B6009D14BC /* DefaultCarrierInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCarrierInfoRepository.swift; sourceTree = "<group>"; };
 		4DD9BAB82F433ECD0020B81E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4DD9BABD2F433EE10020B81E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		4DD9BAC12F433F050020B81E /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */,
 				4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */,
 				4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */,
+				4DC2DAD32F5B75BA009D14BC /* CarrierInfoRepository.swift */,
+				4DC2DAD52F5B76B6009D14BC /* DefaultCarrierInfoRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				4D9D281B2F4E32080045E117 /* CarrierInfoScreen.swift in Sources */,
 				4D148AAB2F33C3C000F8920D /* AllStationsService.swift in Sources */,
 				4DD9BC122F475BB20020B81E /* NavigationModel.swift in Sources */,
+				4DC2DAD62F5B76B6009D14BC /* DefaultCarrierInfoRepository.swift in Sources */,
 				4DD9BBDC2F46501A0020B81E /* CityPickerScreen.swift in Sources */,
 				4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */,
 				4D14051A2F582E4700216422 /* StoriesProgressView.swift in Sources */,
@@ -529,6 +536,7 @@
 				4D148A6B2F329F6A00F8920D /* ScheduleBetweenStationsService.swift in Sources */,
 				4DD9BC152F4794F90020B81E /* RouteSelectionModel.swift in Sources */,
 				4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */,
+				4DC2DAD42F5B75BA009D14BC /* CarrierInfoRepository.swift in Sources */,
 				4D148A842F33849700F8920D /* ThreadStationsService.swift in Sources */,
 				4D9FD0692F3E647A006FD2EC /* SettingsScreen.swift in Sources */,
 				4DD9BC392F4B5A8C0020B81E /* RepositoryError.swift in Sources */,
