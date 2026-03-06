@@ -35,12 +35,17 @@ struct UserAgreementScreen: View {
                     agreementSection
                     chapterOneSection
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.blackDayNight)
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
                 .padding(.bottom, 16)
             }
         }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
+        .toolbar { toolbarAppearance }
     }
     
     private var agreementSection: some View {
@@ -58,6 +63,15 @@ struct UserAgreementScreen: View {
                 .font(.system(size: Constants.titleFontSize, weight: .bold))
             Text(Constants.chapterOneText)
                 .font(.system(size: Constants.bodyFontSize, weight: .regular))
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarAppearance: some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            Text("Пользовательское соглашение")
+                .font(.system(size: 17, weight: .bold))
+                .foregroundStyle(.blackDayNight)
         }
     }
 }

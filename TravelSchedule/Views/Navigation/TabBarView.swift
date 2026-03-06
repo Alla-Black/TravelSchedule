@@ -53,11 +53,13 @@ struct TabBarView: View {
     }
     
     private var settingsTab: some View {
-        SettingsScreen()
-            .tabItem {
-                Image(.settingsItem)
-            }
-            .tag(Tab.settings)
+        NavigationStack {
+            SettingsScreen()
+        }
+        .tabItem {
+            Image(.settingsItem)
+        }
+        .tag(Tab.settings)
     }
     
     // MARK: - Main Root

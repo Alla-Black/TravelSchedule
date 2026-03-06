@@ -32,8 +32,8 @@ struct SettingsScreen: View {
                             .padding(.leading, 4)
                     }
                     
-                    Button {
-                        
+                    NavigationLink {
+                        UserAgreementScreen()
                     } label: {
                         HStack {
                             Text(Constants.userAgreement)
