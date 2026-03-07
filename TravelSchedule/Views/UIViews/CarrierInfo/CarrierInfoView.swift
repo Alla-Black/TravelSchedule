@@ -19,12 +19,19 @@ struct CarrierInfoView: View {
     
     private var headerSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            RemoteLogoView(
-                url: carrier.logoURL,
-                width: .infinity,
-                height: 104,
-                cornerRadius: 24
-            )
+            
+            RoundedRectangle(cornerRadius: 24)
+                .fill(.whiteUniversal)
+                .frame(maxWidth: .infinity, minHeight: 104, maxHeight: 104)
+                .overlay {
+                    RemoteLogoView(
+                        url: carrier.logoURL,
+                        width: .infinity,
+                        height: 104,
+                        cornerRadius: 24,
+                        contentMode: .fit
+                    )
+                }
             
             Text(carrier.title)
                 .font(.system(size: 24, weight: .bold))

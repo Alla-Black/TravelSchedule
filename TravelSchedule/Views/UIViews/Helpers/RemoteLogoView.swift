@@ -5,6 +5,7 @@ struct RemoteLogoView: View {
     let width: CGFloat
     let height: CGFloat
     var cornerRadius: CGFloat
+    let contentMode: ContentMode
     
     var body: some View {
         Group {
@@ -16,7 +17,7 @@ struct RemoteLogoView: View {
                     case .success(let image):
                         image
                             .resizable()
-                            .scaledToFill()
+                            .aspectRatio(contentMode: contentMode)
                     default:
                         placeholder
                     }
@@ -25,7 +26,8 @@ struct RemoteLogoView: View {
                 placeholder
             }
         }
-        .frame(maxWidth: width, minHeight: height, maxHeight: height)        .clipped()
+        .frame(maxWidth: width, minHeight: height, maxHeight: height)
+        .clipped()
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
     
@@ -41,7 +43,8 @@ struct RemoteLogoView: View {
         url: URL(string: "https://img.freepik.com/premium-vector/train-logo-brand_1294175-5790.jpg?semt=ais_hybrid&w=740"),
         width: 38,
         height: 38,
-        cornerRadius: 12
+        cornerRadius: 12,
+        contentMode: .fill
     )
 }
 
@@ -50,6 +53,7 @@ struct RemoteLogoView: View {
         url: URL(string: ""),
         width: 38,
         height: 38,
-        cornerRadius: 12
+        cornerRadius: 12,
+        contentMode: .fill
     )
 }

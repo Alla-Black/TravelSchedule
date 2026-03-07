@@ -11,7 +11,8 @@ struct ScheduleCardView: View {
                         url: item.carrierLogoURL,
                         width: 38,
                         height: 38,
-                        cornerRadius: 12
+                        cornerRadius: 12,
+                        contentMode: .fill
                     )
                     .padding(.trailing, 8)
                     
