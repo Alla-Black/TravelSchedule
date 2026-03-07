@@ -6,7 +6,7 @@ final class CarrierInfoParser {
     }
     
     func parse(dto: CarrierResponse) -> CarrierInfo? {
-        guard let carrier = dto.carriers?.first else {
+        guard let carrier = dto.carrier else {
             return nil
         }
         

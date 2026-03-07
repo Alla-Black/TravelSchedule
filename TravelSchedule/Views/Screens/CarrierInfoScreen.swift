@@ -48,9 +48,3 @@ struct CarrierInfoScreen: View {
         }
     }
 }
-
-#Preview {
-    NavigationStack {
-        CarrierInfoScreen(code: "680")
-    }
-}
