@@ -25,8 +25,7 @@ struct RemoteLogoView: View {
                 placeholder
             }
         }
-        .frame(width: width, height: height)
-        .clipped()
+        .frame(maxWidth: width, minHeight: height, maxHeight: height)        .clipped()
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
     

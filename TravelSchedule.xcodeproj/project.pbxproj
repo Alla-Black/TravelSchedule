@@ -78,9 +78,9 @@
 		4DD9BC412F4B82F10020B81E /* ScheduleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */; };
 		4DD9BC442F4B87A70020B81E /* ScheduleScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */; };
 		4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */; };
-		4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */; };
 		4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */; };
 		4DF293122F5B8704002459B4 /* CarrierInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293112F5B8704002459B4 /* CarrierInfoView.swift */; };
+		4DF293642F5BA71F002459B4 /* RemoteLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF293622F5BA71F002459B4 /* RemoteLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,9 +155,9 @@
 		4DD9BC402F4B82F10020B81E /* ScheduleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreen.swift; sourceTree = "<group>"; };
 		4DD9BC432F4B87A70020B81E /* ScheduleScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenViewModel.swift; sourceTree = "<group>"; };
 		4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCardView.swift; sourceTree = "<group>"; };
-		4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLogoView.swift; sourceTree = "<group>"; };
 		4DF293072F5B7EF9002459B4 /* CarrierInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoViewModel.swift; sourceTree = "<group>"; };
 		4DF293112F5B8704002459B4 /* CarrierInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoView.swift; sourceTree = "<group>"; };
+		4DF293622F5BA71F002459B4 /* RemoteLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +207,8 @@
 				4D9FCFB92F3E0F09006FD2EC /* App */,
 				4DD9BAB92F433ECD0020B81E /* Domain Models */,
 				4D148A502F313F8A00F8920D /* Views */,
+				4D9FD0622F3E63F7006FD2EC /* Navigation */,
+				4DD9BAF82F4395B90020B81E /* States */,
 				4DD9BB422F449C770020B81E /* ViewModels */,
 				4DD9BAD02F434DF30020B81E /* Data */,
 				4D148A452F313F1300F8920D /* Services */,
@@ -246,8 +248,6 @@
 			children = (
 				4D9FD0732F3E658E006FD2EC /* Screens */,
 				4D9FD07F2F3E65BB006FD2EC /* UIViews */,
-				4DD9BAF82F4395B90020B81E /* States */,
-				4D9FD0622F3E63F7006FD2EC /* Navigation */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,18 +308,14 @@
 		4D9FD07F2F3E65BB006FD2EC /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				4DF293922F5BA84D002459B4 /* City+StationPicker */,
+				4DF293892F5BA806002459B4 /* Schedule */,
+				4DF2937F2F5BA7BE002459B4 /* Error */,
+				4DF2936F2F5BA766002459B4 /* Main */,
+				4DF293632F5BA71F002459B4 /* Helpers */,
 				4DF2930E2F5B86ED002459B4 /* CarrierInfo */,
 				4DC2D9AB2F59DA06009D14BC /* Modifiers */,
 				4D1404F52F578DAB00216422 /* Stories */,
-				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
-				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
-				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,
-				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
-				4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */,
-				4DD9BB902F45E9810020B81E /* PickerRowView.swift */,
-				4DD9BBB42F4606110020B81E /* PickerListView.swift */,
-				4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */,
-				4DD9BC492F4C76860020B81E /* RemoteLogoView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -413,6 +409,50 @@
 			path = CarrierInfo;
 			sourceTree = "<group>";
 		};
+		4DF293632F5BA71F002459B4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4DF293622F5BA71F002459B4 /* RemoteLogoView.swift */,
+				4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4DF2936F2F5BA766002459B4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4D9FD0862F3E73DC006FD2EC /* RouteInputCardView.swift */,
+				4D9FD08C2F3E7507006FD2EC /* RouteFieldsView.swift */,
+				4D9FD0922F3E751E006FD2EC /* SwapButton.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4DF2937F2F5BA7BE002459B4 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB002F43965B0020B81E /* ErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		4DF293892F5BA806002459B4 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BC462F4C6AE20020B81E /* ScheduleCardView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		4DF293922F5BA84D002459B4 /* City+StationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4DD9BB902F45E9810020B81E /* PickerRowView.swift */,
+				4DD9BBB42F4606110020B81E /* PickerListView.swift */,
+			);
+			path = "City+StationPicker";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,7 +536,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC2DACE2F5B5C2A009D14BC /* CarrierInfo.swift in Sources */,
-				4DD9BC4A2F4C76860020B81E /* RemoteLogoView.swift in Sources */,
 				4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */,
 				4D9FD0742F3E658E006FD2EC /* SplashScreen.swift in Sources */,
 				4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */,
@@ -522,6 +561,7 @@
 				4D9FD0572F3E6213006FD2EC /* MainScreen.swift in Sources */,
 				4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
+				4DF293642F5BA71F002459B4 /* RemoteLogoView.swift in Sources */,
 				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
 				4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */,

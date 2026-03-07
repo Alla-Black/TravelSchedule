@@ -21,7 +21,7 @@ struct CarrierInfoView: View {
         VStack(alignment: .leading, spacing: 16) {
             RemoteLogoView(
                 url: carrier.logoURL,
-                width: 343,
+                width: .infinity,
                 height: 104,
                 cornerRadius: 24
             )
