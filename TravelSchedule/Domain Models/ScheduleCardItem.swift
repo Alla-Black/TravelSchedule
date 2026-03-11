@@ -2,7 +2,7 @@ import Foundation
 
 /// Модель карточки рейса для отображения в списке расписания.
 /// Содержит уже отформатированные данные, готовые для UI.
-struct ScheduleCardItem: Identifiable, Hashable {
+struct ScheduleCardItem: Identifiable, Hashable, Sendable {
     /// Уникальный идентификатор карточки (составной: uid + дата отправления).
     let id: String
     

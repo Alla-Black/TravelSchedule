@@ -1,6 +1,6 @@
 import Foundation
 
-struct Selection: Hashable {
+struct Selection: Hashable, Sendable {
     let city: City
     let station: Station
     var displayTitle: String {

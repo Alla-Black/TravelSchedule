@@ -1,6 +1,6 @@
 import Foundation
 
-struct ScheduleFilters: Equatable { // можно сравнивать весь объект целиком
+struct ScheduleFilters: Equatable, Sendable { // можно сравнивать весь объект целиком
     var departureTimeRanges: Set<DepartureTimeRange>
     var transfers: TransfersOption
     
@@ -10,7 +10,7 @@ struct ScheduleFilters: Equatable { // можно сравнивать весь 
     )
 }
 
-enum DepartureTimeRange: CaseIterable, Hashable {
+enum DepartureTimeRange: CaseIterable, Hashable, Sendable {
     case morning
     case day
     case evening
@@ -26,7 +26,7 @@ enum DepartureTimeRange: CaseIterable, Hashable {
     }
 }
 
-enum TransfersOption: Equatable {
+enum TransfersOption: Equatable, Sendable {
     case all
     case onlyDirect
 }

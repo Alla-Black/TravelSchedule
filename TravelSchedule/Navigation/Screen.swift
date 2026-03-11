@@ -1,6 +1,6 @@
 import Foundation
 
-enum Screen: Hashable {
+enum Screen: Hashable, Sendable {
     case city(Direction)
     case station(Direction, City)
     case schedule(from: Selection, to: Selection)
