@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class CarrierInfoViewModel: ObservableObject {
     // MARK: - States
     
@@ -24,7 +25,6 @@ final class CarrierInfoViewModel: ObservableObject {
     
     // MARK: - Public Methods
     
-    @MainActor
     func load() async {
         if case .loading = state { return }
         
