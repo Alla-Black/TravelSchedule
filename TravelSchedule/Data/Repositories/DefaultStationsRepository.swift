@@ -36,17 +36,17 @@ actor DefaultStationsRepository: StationsRepository {
         
         let task = Task<Void, Error> {
             do {
-                let client = await Client(
-                    serverURL: try await Servers.Server1.url(),
+                let client = Client(
+                    serverURL: try Servers.Server1.url(),
                     transport: URLSessionTransport()
                 )
-                let service = await AllStationsService(
+                let service = AllStationsService(
                     client: client,
                     apikey: apikey
                 )
                 
                 let dtoStations = try await service.getAllStations()
-                let parsed = await self.parser.parse(allStationResponse: dtoStations)
+                let parsed = self.parser.parse(allStationResponse: dtoStations)
                 
                 self.updateCache(
                     cities: parsed.citiesById.values.sorted(by: { $0.title < $1.title}),
