@@ -76,7 +76,7 @@ struct ScheduleScreen: View {
                             LazyVStack(spacing: 8) {
                                 ForEach(viewModel.displayedSchedule) { item in
                                     Button {
-                                        navigationModel.push(.carrierInfo)
+                                        navigationModel.push(.carrierInfo(code: item.carrierCode))
                                     } label: {
                                         ScheduleCardView(item: item)
                                     }

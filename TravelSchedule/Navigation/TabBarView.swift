@@ -53,11 +53,13 @@ struct TabBarView: View {
     }
     
     private var settingsTab: some View {
-        SettingsScreen()
-            .tabItem {
-                Image(.settingsItem)
-            }
-            .tag(Tab.settings)
+        NavigationStack {
+            SettingsScreen()
+        }
+        .tabItem {
+            Image(.settingsItem)
+        }
+        .tag(Tab.settings)
     }
     
     // MARK: - Main Root
@@ -98,8 +100,8 @@ struct TabBarView: View {
         case .scheduleFilters:
             ScheduleFiltersScreen()
             
-        case .carrierInfo:
-            CarrierInfoScreen()
+        case .carrierInfo(let code):
+            CarrierInfoScreen(code: code)
         }
     }
     

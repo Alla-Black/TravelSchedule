@@ -28,6 +28,10 @@ struct ScheduleCardItem: Identifiable, Hashable {
     /// Признак наличия пересадок.
     let hasTransfers: Bool
     
+    /// Идентификатор перевозчика из API.
+    /// Используется для загрузки подробной информации на экране перевозчика.
+    let carrierCode: String
+    
     /// Подзаголовок для отображения информации о пересадке.
     var transfersSubtitle: String? {
         hasTransfers ? "С пересадкой" : nil
@@ -42,7 +46,8 @@ struct ScheduleCardItem: Identifiable, Hashable {
         departureTimeTitle: String,
         arrivalTimeTitle: String,
         durationTitle: String,
-        hasTransfers: Bool
+        hasTransfers: Bool,
+        carrierCode: String
     ) {
         self.id = "\(uid)_\(departureRawString)"
         
@@ -55,5 +60,6 @@ struct ScheduleCardItem: Identifiable, Hashable {
         self.durationTitle = durationTitle
         
         self.hasTransfers = hasTransfers
+        self.carrierCode = carrierCode
     }
 }
