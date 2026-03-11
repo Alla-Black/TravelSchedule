@@ -7,7 +7,7 @@ struct SettingsScreen: View {
         static let apiImplementation = "Приложение использует API «Яндекс.Расписания»"
     }
     
-    @AppStorage("isDarkThemeEnabled") private var isDarkThemeEnabled: Bool = false
+    @AppStorage(AppStorageKeys.isDarkThemeEnabled.rawValue) private var isDarkThemeEnabled: Bool = false
     
     private var appVersionText: String {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"

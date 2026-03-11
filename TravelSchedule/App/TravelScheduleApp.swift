@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct TravelScheduleApp: App {
-    @AppStorage("isDarkThemeEnabled") private var isDarkThemeEnabled = false
+    @AppStorage(AppStorageKeys.isDarkThemeEnabled.rawValue) private var isDarkThemeEnabled = false
     
     var body: some Scene {
         WindowGroup {
