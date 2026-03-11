@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum AppErrorState: Hashable {
+enum AppErrorState: Hashable, Sendable {
     case server
     case noInternet
     

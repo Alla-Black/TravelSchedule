@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class ScheduleFiltersViewModel: ObservableObject {
     @Published var filters: ScheduleFilters
     
@@ -8,8 +9,8 @@ final class ScheduleFiltersViewModel: ObservableObject {
         filters != .default
     }
     
-    init(filters: ScheduleFilters = .default) {
-        self.filters = filters
+    init(filters: ScheduleFilters? = nil) {
+        self.filters = filters ?? .default
     }
     
     func toggle(_ range: DepartureTimeRange) {

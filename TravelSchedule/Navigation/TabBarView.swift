@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - Enums
 
-enum Tab: Hashable {
+enum Tab: Hashable, Sendable {
     case main
     case settings
 }

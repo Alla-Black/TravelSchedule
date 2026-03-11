@@ -1,6 +1,6 @@
 import Foundation
 
-private protocol DateParsingFormatter {
+private protocol DateParsingFormatter: Sendable {
     func date(from string: String) -> Date?
 }
 

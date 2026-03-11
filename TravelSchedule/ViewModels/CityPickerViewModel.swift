@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class CityPickerViewModel: ObservableObject {
     // MARK: - States
     
@@ -44,7 +45,6 @@ final class CityPickerViewModel: ObservableObject {
     
     // MARK: - Public Methods
     
-    @MainActor
     func load() async {
         if case .loading = state { return }
         

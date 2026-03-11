@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class RouteSelectionModel: ObservableObject {
     @Published var from: Selection?
     @Published var to: Selection?
