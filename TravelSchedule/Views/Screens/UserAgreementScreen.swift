@@ -37,9 +37,7 @@ struct UserAgreementScreen: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.blackDayNight)
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
-                .padding(.bottom, 16)
+                .padding([.horizontal, .top, .bottom], 16)
             }
         }
         .navigationTitle("")

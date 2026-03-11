@@ -9,7 +9,7 @@ struct MainScreen: View {
     @State private var selectedStoryIndex = 0
     
     var body: some View {
-        ZStack() {
+        ZStack {
             Color.whiteDayNight
                 .ignoresSafeArea()
             

@@ -6,7 +6,7 @@ struct StoriesCarouselView: View {
     let seenStoryIDs: Set<UUID>
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal) {
             LazyHStack(spacing: 12) {
                 ForEach(stories.indices, id: \.self) { index in
                     let story = stories[index]
@@ -39,6 +39,7 @@ struct StoriesCarouselView: View {
                 }
             }
         }
+        .scrollIndicators(.hidden)
         .frame(height: 140)
     }
 }
