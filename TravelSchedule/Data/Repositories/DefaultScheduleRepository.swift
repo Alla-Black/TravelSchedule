@@ -3,20 +3,20 @@ import OpenAPIURLSession
 import OpenAPIRuntime
 import os
 
-final class DefaultScheduleRepository: ScheduleRepository {
+actor DefaultScheduleRepository: ScheduleRepository {
     private enum Constants {
-            static let defaultSubsystem = "TravelSchedule"
-            static let loggerCategory = "ScheduleRepository"
-            static let apiDateFormat = "yyyy-MM-dd"
-            static let posixLocale = "en_US_POSIX"
-            static let error404Token = "statusCode: 404"
-            static let loadScheduleFailed = "Failed to load schedule between stations: "
-        }
+        static let defaultSubsystem = "TravelSchedule"
+        static let loggerCategory = "ScheduleRepository"
+        static let apiDateFormat = "yyyy-MM-dd"
+        static let posixLocale = "en_US_POSIX"
+        static let error404Token = "statusCode: 404"
+        static let loadScheduleFailed = "Failed to load schedule between stations: "
+    }
     
     // MARK: - Private Properties
     
-    private let apikey: String = AppConfiguration.apiKey
-    private let parser = ScheduleResponseParser()
+    private let apikey: String
+    private let parser: ScheduleResponseParser
     
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? Constants.defaultSubsystem,
@@ -24,6 +24,7 @@ final class DefaultScheduleRepository: ScheduleRepository {
     )
     
     private var cache: [CacheKey: [ScheduleCardItem]] = [:]
+    private var loadingTasks: [CacheKey: Task<[ScheduleCardItem], Error>] = [:]
     
     // MARK: - Static Properties
     
@@ -44,6 +45,13 @@ final class DefaultScheduleRepository: ScheduleRepository {
         let transfers: Bool
     }
     
+    // MARK: - Init
+    
+    init(apikey: String? = nil) {
+        self.apikey = apikey ?? AppConfiguration.apiKey
+        self.parser = ScheduleResponseParser()
+    }
+    
     // MARK: - Public Methods
     
     func fetchSchedule(from: Station, to: Station, date: Date, transfers: Bool) async throws -> [ScheduleCardItem] {
@@ -57,46 +65,63 @@ final class DefaultScheduleRepository: ScheduleRepository {
             return cached
         }
         
-        do {
-            let client = Client(
-                serverURL: try Servers.Server1.url(),
-                transport: URLSessionTransport()
-            )
-            let service = ScheduleBetweenStationsService(
-                client: client,
-                apikey: apikey
-            )
-            
-            let dto = try await service.getScheduleBetweenStations(
-                from: fromCode,
-                to: toCode,
-                date: dateString,
-                transfers: transfers
-            )
-            
-            let parsed = parser.parse(dto: dto)
-            
-            if parsed.isEmpty {
-                throw RepositoryError.dataNotFound
-            }
-            
-            cache[key] = parsed
-            return parsed
-            
-        } catch {
-            logger.error("\(Constants.loadScheduleFailed)\(String(describing: error))")
-            if let repoError = error as? RepositoryError {
+        if let loadingTask = loadingTasks[key] {
+            return try await loadingTask.value
+        }
+        
+        let task = Task<[ScheduleCardItem], Error> {
+            do {
+                let client = Client(
+                    serverURL: try Servers.Server1.url(),
+                    transport: URLSessionTransport()
+                )
+                let service = ScheduleBetweenStationsService(
+                    client: client,
+                    apikey: self.apikey
+                )
+                
+                let dto = try await service.getScheduleBetweenStations(
+                    from: fromCode,
+                    to: toCode,
+                    date: dateString,
+                    transfers: transfers
+                )
+                
+                let parsed = self.parser.parse(dto: dto)
+                
+                if parsed.isEmpty {
+                    throw RepositoryError.dataNotFound
+                }
+                
+                return parsed
+                
+            } catch {
+                self.logger.error("\(Constants.loadScheduleFailed)\(String(describing: error))")
+                if let repoError = error as? RepositoryError {
                     throw repoError
                 }
-            
-            if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
-                throw RepositoryError.noInternet
+                
+                if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
+                    throw RepositoryError.noInternet
+                }
+                let description = String(describing: error)
+                if description.contains(Constants.error404Token) {
+                    throw RepositoryError.dataNotFound
+                }
+                throw RepositoryError.server
             }
-            let description = String(describing: error)
-            if description.contains(Constants.error404Token) {
-                throw RepositoryError.dataNotFound
-            }
-            throw RepositoryError.server
+        }
+        
+        loadingTasks[key] = task
+        
+        do {
+            let result = try await task.value
+            cache[key] = result
+            loadingTasks[key] = nil
+            return result
+        } catch {
+            loadingTasks[key] = nil
+            throw error
         }
     }
 }
