@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class ScheduleScreenViewModel: ObservableObject {
     // MARK: - States
     
@@ -44,7 +45,6 @@ final class ScheduleScreenViewModel: ObservableObject {
     
     // MARK: - Public Methods
     
-    @MainActor
     func load() async {
         if case .loading = state { return }
         
@@ -82,7 +82,6 @@ final class ScheduleScreenViewModel: ObservableObject {
     
     // MARK: - Filtering
     
-    @MainActor
     func applyFilters(_ newFilters: ScheduleFilters) {
         filters = newFilters
         rebuildDisplayedSchedule()
@@ -90,7 +89,6 @@ final class ScheduleScreenViewModel: ObservableObject {
     
     // MARK: - Private Methods
     
-    @MainActor
     private func rebuildDisplayedSchedule() {
         var result = schedule
         

@@ -13,7 +13,6 @@
 		4D14058D2F58443B00216422 /* StoryFullscreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14058C2F58443B00216422 /* StoryFullscreenViewModel.swift */; };
 		4D1405A22F58735D00216422 /* StoryPagesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1405A12F58735D00216422 /* StoryPagesTabView.swift */; };
 		4D148A1E2F30EC2E00F8920D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D148A1A2F30EC2E00F8920D /* Assets.xcassets */; };
-		4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A1B2F30EC2E00F8920D /* ContentView.swift */; };
 		4D148A202F30EC2E00F8920D /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A1C2F30EC2E00F8920D /* TravelScheduleApp.swift */; };
 		4D148A242F30F0FD00F8920D /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 4D148A232F30F0FD00F8920D /* OpenAPIRuntime */; };
 		4D148A272F30F11C00F8920D /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 4D148A262F30F11C00F8920D /* OpenAPIURLSession */; };
@@ -59,7 +58,7 @@
 		4DD9BAFD2F43963E0020B81E /* AppErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */; };
 		4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB002F43965B0020B81E /* ErrorView.swift */; };
 		4DD9BB142F43A5850020B81E /* StationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB132F43A5850020B81E /* StationsRepository.swift */; };
-		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */; };
+		4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift */; };
 		4DD9BB492F449CB80020B81E /* CityPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */; };
 		4DD9BB4F2F44FC450020B81E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */; };
 		4DD9BB912F45E9810020B81E /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9BB902F45E9810020B81E /* PickerRowView.swift */; };
@@ -137,7 +136,7 @@
 		4DD9BAFC2F43963E0020B81E /* AppErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorState.swift; sourceTree = "<group>"; };
 		4DD9BB002F43965B0020B81E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4DD9BB132F43A5850020B81E /* StationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRepository.swift; sourceTree = "<group>"; };
-		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultStationsRepository.swift .swift"; sourceTree = "<group>"; };
+		4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStationsRepository.swift; sourceTree = "<group>"; };
 		4DD9BB482F449CB80020B81E /* CityPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerViewModel.swift; sourceTree = "<group>"; };
 		4DD9BB4E2F44FC450020B81E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		4DD9BB902F45E9810020B81E /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
@@ -381,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD9BB132F43A5850020B81E /* StationsRepository.swift */,
-				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift .swift */,
+				4DD9BB182F43ABBB0020B81E /* DefaultStationsRepository.swift */,
 				4DD9BC322F4B56940020B81E /* ScheduleRepository.swift */,
 				4DD9BC352F4B59DB0020B81E /* DefaultScheduleRepository.swift */,
 				4DC2DAD32F5B75BA009D14BC /* CarrierInfoRepository.swift */,
@@ -541,7 +540,6 @@
 				4DC2DACE2F5B5C2A009D14BC /* CarrierInfo.swift in Sources */,
 				4DD9BC2E2F4A07820020B81E /* ScheduleResponseParser.swift in Sources */,
 				4D9FD0742F3E658E006FD2EC /* SplashScreen.swift in Sources */,
-				4D148A1F2F30EC2E00F8920D /* ContentView.swift in Sources */,
 				4DD9BC472F4C6AE20020B81E /* ScheduleCardView.swift in Sources */,
 				4D9FD05D2F3E63E4006FD2EC /* TabBarView.swift in Sources */,
 				4D9D28032F4DD88F0045E117 /* ScheduleFilters.swift in Sources */,
@@ -565,7 +563,7 @@
 				4DF293082F5B7EF9002459B4 /* CarrierInfoViewModel.swift in Sources */,
 				4D148A7D2F336AB100F8920D /* StationScheduleService.swift in Sources */,
 				4DF293642F5BA71F002459B4 /* RemoteLogoView.swift in Sources */,
-				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift .swift in Sources */,
+				4DD9BB192F43ABBB0020B81E /* DefaultStationsRepository.swift in Sources */,
 				4D9FCFBA2F3E0F09006FD2EC /* AppConfiguration.swift in Sources */,
 				4DD9BB012F43965B0020B81E /* ErrorView.swift in Sources */,
 				4D148A5B2F328ED100F8920D /* CopyrightService.swift in Sources */,
@@ -768,8 +766,9 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -804,8 +803,9 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

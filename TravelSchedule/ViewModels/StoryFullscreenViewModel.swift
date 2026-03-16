@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class StoryFullscreenViewModel: ObservableObject {
     // MARK: - States
     

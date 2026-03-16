@@ -1,6 +1,6 @@
 import Foundation
 
-struct CarrierInfo {
+struct CarrierInfo: Sendable {
     let title: String
     let logoURL: URL?
     let email: String?

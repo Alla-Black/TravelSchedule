@@ -1,6 +1,6 @@
 import Foundation
 
-enum LoadState {
+enum LoadState: Sendable {
     case idle
     case loading
     case loaded

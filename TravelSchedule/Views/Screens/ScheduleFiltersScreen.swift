@@ -6,7 +6,7 @@ struct ScheduleFiltersScreen: View {
     
     @StateObject private var viewModel = ScheduleFiltersViewModel()
     
-    private enum SectionType: CaseIterable {
+    private enum SectionType: CaseIterable, Sendable {
         case departureTime
         case transfers
         

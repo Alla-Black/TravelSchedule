@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+@MainActor
 final class NavigationModel: ObservableObject {
     @Published var path: [Screen] = [] // массив экранов
     
